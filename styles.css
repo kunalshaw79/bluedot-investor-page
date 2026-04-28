@@ -1,0 +1,269 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --yc-orange: #F26625;
+  --text-dark: #1A1A1A;
+  --text-secondary: #666666;
+  --border-light: #E5E5E5;
+  --bg-white: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: var(--bg-white);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero {
+  padding: 80px 0 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-dark);
+}
+
+.hero .tagline {
+  font-size: 24px;
+  color: var(--yc-orange);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.hero .subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+section {
+  padding: 60px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+section h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--text-dark);
+}
+
+section h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 24px 0 12px;
+  color: var(--text-dark);
+}
+
+section p {
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+}
+
+section ul {
+  margin-bottom: 16px;
+  padding-left: 24px;
+}
+
+section li {
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+}
+
+section a {
+  color: var(--yc-orange);
+  text-decoration: none;
+}
+
+section a:hover {
+  text-decoration: underline;
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .founder-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.founder-card {
+  padding: 24px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+}
+
+.founder-card h3 {
+  margin-top: 0;
+  color: var(--yc-orange);
+}
+
+.founder-card .role {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.founder-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.founder-card li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.founder-card li:last-child {
+  border-bottom: none;
+}
+
+.video-container {
+  margin: 24px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-container video {
+  width: 100%;
+  display: block;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 24px 0;
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-card {
+  text-align: center;
+  padding: 24px;
+  background: #FAFAFA;
+  border-radius: 8px;
+}
+
+.stat-card .number {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--yc-orange);
+}
+
+.stat-card .label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+.competitor-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.competitor-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.competitor-list li strong {
+  color: var(--text-dark);
+}
+
+.contact-section {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--yc-orange);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.contact-links a:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+  
+  .hero .tagline {
+    font-size: 18px;
+  }
+  
+  section h2 {
+    font-size: 24px;
+  }
+  
+  .hero {
+    padding: 60px 0 40px;
+  }
+  
+  section {
+    padding: 40px 0;
+  }
+}
