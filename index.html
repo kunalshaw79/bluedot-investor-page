@@ -7,38 +7,72 @@
   <meta name="description" content="Physics simulations for energy R&D, 100x faster">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <section class="hero">
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">BlueDot Labs</a>
+      <div class="nav-links">
+        <a href="#founders">Founders</a>
+        <a href="#company">Company</a>
+        <a href="#progress">Progress</a>
+        <a href="#idea">Idea</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="container">
+      <div class="hero-badge">B2B SaaS • Energy R&D</div>
       <h1>BlueDot Labs</h1>
       <p class="tagline">Physics simulations for energy R&D, 100x faster</p>
-    </section>
+      <p class="subtitle">Bengaluru, India → San Francisco, USA</p>
+    </div>
+  </div>
 
-    <section class="fade-in">
-      <h2>Founders</h2>
-      <div class="video-container">
-        <video controls preload="metadata">
-          <source src="assets/founders-video.mp4" type="video/mp4">
-        </video>
-      </div>
-      
-      <div class="qa-block">
-        <p class="question">How long have the founders known one another and how did you meet? Have any of the founders not met in person?</p>
-        <p class="answer">At Engineering Physics at IIT Roorkee, we've known each other for five years and spent our final year working together on building an intelligent Battery Management System (BMS) in the ESL lab which worked for sodium ion cells.</p>
+  <div class="container">
+    <section id="founders" class="section fade-in">
+      <div class="section-header">
+        <div class="section-icon">👤</div>
+        <h2>Founders</h2>
       </div>
 
-      <div class="qa-block">
-        <p class="question">Who writes code, or does other technical work on your product? Was any of it done by a non-founder? Please explain.</p>
-        <p class="answer">Kamal writes the code and Kunal make scientific modules which agent uses to orchestrate simulations.</p>
+      <div class="video-wrapper">
+        <div class="video-label"><span>▶</span> Founder Video</div>
+        <div class="video-container">
+          <video controls preload="metadata">
+            <source src="assets/founders-video.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">How long have the founders known one another and how did you meet? Have any of the founders not met in person?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">At Engineering Physics at IIT Roorkee, we've known each other for five years and spent our final year working together on building an intelligent Battery Management System (BMS) in the ESL lab which worked for sodium ion cells.</p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Who writes code, or does other technical work on your product? Was any of it done by a non-founder?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">Kamal writes the code and Kunal make scientific modules which agent uses to orchestrate simulations.</p>
+        </div>
       </div>
 
       <div class="founder-grid">
         <div class="founder-card">
           <h3>Kunal Shaw</h3>
-          <p class="role">CEO | 50% Equity</p>
+          <p class="role"><span class="role-badge">CEO</span> 50% Equity</p>
           <ul>
             <li>IIT Roorkee, Engineering Physics (2025)</li>
             <li>1.5 years running ProtonCraft (TRL-6, LOIs with BPCL & IOCL)</li>
@@ -47,12 +81,14 @@
             <li>Winner, Together 5.0 Indo-Canadian Tech Startup Competition</li>
             <li>JEE 99% percentile (Top 1% of 1.2M+ candidates)</li>
           </ul>
-          <p><a href="https://www.linkedin.com/in/shawkunal031/" target="_blank">LinkedIn</a></p>
+          <div class="links">
+            <a href="https://www.linkedin.com/in/shawkunal031/" target="_blank">LinkedIn</a>
+          </div>
         </div>
 
         <div class="founder-card">
           <h3>Kamal Utla</h3>
-          <p class="role">CTO | 50% Equity</p>
+          <p class="role"><span class="role-badge">CTO</span> 50% Equity</p>
           <ul>
             <li>IIT Roorkee, Engineering Physics (2024)</li>
             <li>Founding AI Engineer at BorderPlus - built entire AI stack</li>
@@ -61,196 +97,338 @@
             <li>Winner, IBM Qiskit Fall Fest 2021 - Quantum Computing Hackathon</li>
             <li>Top 5 in department at IIT Roorkee</li>
           </ul>
-          <p><a href="https://www.linkedin.com/in/kamal-utla/" target="_blank">LinkedIn</a> | <a href="https://github.com/kamal20122012" target="_blank">GitHub</a></p>
+          <div class="links">
+            <a href="https://www.linkedin.com/in/kamal-utla/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/kamal20122012" target="_blank">GitHub</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="fade-in">
-      <h2>Company</h2>
-      
-      <div class="qa-block">
-        <p class="question">Company name</p>
-        <p class="answer">BlueDot Labs</p>
+    <section id="company" class="section fade-in">
+      <div class="section-header">
+        <div class="section-icon">🏢</div>
+        <h2>Company</h2>
       </div>
 
-      <div class="qa-block">
-        <p class="question">Describe what your company does in 50 characters or less.</p>
-        <p class="answer">Physics simulations for energy R&D, 100x faster</p>
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Company name</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">BlueDot Labs</p>
+        </div>
       </div>
 
-      <div class="qa-block">
-        <p class="question">Company URL</p>
-        <p class="answer"><a href="https://bluedotlabs.org/" target="_blank">https://bluedotlabs.org/</a></p>
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Describe what your company does in 50 characters or less.</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">Physics simulations for energy R&D, 100x faster</p>
+        </div>
       </div>
 
-      <div class="qa-block">
-        <p class="question">Product link (login: demo@bdlabs.ai / pimono@032)</p>
-        <p class="answer"><a href="https://bluedotlabs.org/login" target="_blank">https://bluedotlabs.org/login</a></p>
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Company URL</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text"><a href="https://bluedotlabs.org/" target="_blank">https://bluedotlabs.org/</a></p>
+        </div>
       </div>
 
-      <div class="qa-block">
-        <p class="question">What is your company going to make? Please describe your product and what it does or will do.</p>
-        <p class="answer">We've built an AI-native platform that creates battery simulations in minutes, eliminating the 7–8 days it takes companies like e-TRNL Energy.</p>
-        <p class="answer">The AI agent plans, builds, and runs scientific simulations from plain text. It converts a text prompt into an editable flowchart and clarifies constraints with the researcher before running the physical model on our compute.</p>
-        <p class="answer">Researchers can instantly run parameter sweeps and visualize results, condensing weeks of complex scientific modeling into minutes of prompting so researchers can focus purely on the science.</p>
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Product link (login: demo@bdlabs.ai / pimono@032)</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text"><a href="https://bluedotlabs.org/login" target="_blank">https://bluedotlabs.org/login</a></p>
+        </div>
       </div>
 
-      <h3>Demo Video</h3>
-      <div class="video-container">
-        <video controls preload="metadata">
-          <source src="assets/demo-video.mp4" type="video/mp4">
-        </video>
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">What is your company going to make? Please describe your product and what it does or will do.</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">We've built an AI-native platform that creates battery simulations in minutes, eliminating the 7–8 days it takes companies like e-TRNL Energy.</p>
+          <p class="qa-a-text">The AI agent plans, builds, and runs scientific simulations from plain text. It converts a text prompt into an editable flowchart and clarifies constraints with the researcher before running the physical model on our compute.</p>
+          <p class="qa-a-text">Researchers can instantly run parameter sweeps and visualize results, condensing weeks of complex scientific modeling into minutes of prompting so researchers can focus purely on the science.</p>
+        </div>
       </div>
 
-      <div class="qa-block">
-        <p class="question">Where do you live now, and where would the company be based after YC?</p>
-        <p class="answer">Bengaluru, India / San Francisco, USA</p>
+      <div class="video-wrapper">
+        <div class="video-label"><span>▶</span> Demo Video</div>
+        <div class="video-container">
+          <video controls preload="metadata">
+            <source src="assets/demo-video.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
 
-      <div class="qa-block">
-        <p class="question">Explain your decision regarding location.</p>
-        <p class="answer">SF gives our AI product direct access to the YC network, high-paying customers, top talent, and deep-tech investors.</p>
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Where do you live now, and where would the company be based after YC?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">Bengaluru, India / San Francisco, USA</p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Explain your decision regarding location.</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">SF gives our AI product direct access to the YC network, high-paying customers, top talent, and deep-tech investors.</p>
+        </div>
       </div>
     </section>
 
-    <section class="fade-in">
-      <h2>Progress</h2>
+    <section id="progress" class="section fade-in">
+      <div class="section-header">
+        <div class="section-icon">📈</div>
+        <h2>Progress</h2>
+      </div>
 
-      <div class="stats-grid">
-        <div class="stat-card">
+      <div class="stats-row">
+        <div class="stat-box">
           <div class="number">3</div>
           <div class="label">Months Building</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-box">
           <div class="number">5</div>
           <div class="label">Active Users</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-box">
           <div class="number">2</div>
           <div class="label">B2B LOIs</div>
         </div>
       </div>
-      
-      <div class="qa-block">
-        <p class="question">How far along are you?</p>
-        <p class="answer">In 3 months, we shipped V0, obtained LOIs with two B2B battery companies (e-TRNL Energy, Indi Energy), and onboarded three Tier-1 institutions (Caltech, TU Munich, TU Dresden) as design partners. We're now iterating to V1 based on our customers' feedback to convert them into paid contracts.</p>
+
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">How far along are you?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">In 3 months, we shipped V0, obtained LOIs with two B2B battery companies (e-TRNL Energy, Indi Energy), and onboarded three Tier-1 institutions (Caltech, TU Munich, TU Dresden) as design partners. We're now iterating to V1 based on our customers' feedback to convert them into paid contracts.</p>
+        </div>
       </div>
 
-      <div class="qa-block">
-        <p class="question">How long have each of you been working on this? How much of that has been full-time? Please explain.</p>
-        <p class="answer">We are building this product since 3 months. Kunal is full time and Kamal joins full-time June 4th, currently serving notice.</p>
-        <p class="answer">Kunal ran ProtonCraft for 1.5 years. BlueDotLabs is the internal tool we built out of desperation. Realized every deep-tech team has the same problem.</p>
-        <p class="answer">ProtonCraft is a local maxima. We're going for the bigger one.</p>
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">How long have each of you been working on this? How much of that has been full-time?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">We are building this product since 3 months. Kunal is full time and Kamal joins full-time June 4th, currently serving notice.</p>
+          <p class="qa-a-text">Kunal ran ProtonCraft for 1.5 years. BlueDotLabs is the internal tool we built out of desperation. Realized every deep-tech team has the same problem.</p>
+          <p class="qa-a-text">ProtonCraft is a local maxima. We're going for the bigger one.</p>
+        </div>
       </div>
 
-      <div class="qa-block">
-        <p class="question">What tech stack are you using, or planning to use, to build your product?</p>
-        <p class="answer">Backend: Python. Coding agent server: TypeScript (powered by PiMono — the same engine behind OpenClaw). DB: PostgreSQL. Frontend: Next.js. Flow builder: React Flow.</p>
-        <p class="answer">We build with Claude Code as our primary coding agent, falling back to OpenCode with GLM, Obra superpowers, and Oh My OpenCode. Both are customized with Playwright skills for E2E testing and integrated DevOps workflows. UI/UX starts in Google Stitch — screens go straight to the agent as reference.</p>
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">What tech stack are you using, or planning to use, to build your product?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">Backend: Python. Coding agent server: TypeScript (powered by PiMono — the same engine behind OpenClaw). DB: PostgreSQL. Frontend: Next.js. Flow builder: React Flow.</p>
+          <p class="qa-a-text">We build with Claude Code as our primary coding agent, falling back to OpenCode with GLM, Obra superpowers, and Oh My OpenCode. Both are customized with Playwright skills for E2E testing and integrated DevOps workflows. UI/UX starts in Google Stitch — screens go straight to the agent as reference.</p>
+        </div>
       </div>
 
-      <div class="qa-block">
-        <p class="question">Are people using your product?</p>
-        <p class="answer">Yes</p>
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Are people using your product?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">Yes</p>
+        </div>
       </div>
 
-      <div class="qa-block">
-        <p class="question">How many active users or customers do you have? How many are paying? Who is paying you the most, and how much do they pay you?</p>
-        <p class="answer">We have three individuals at Tier-1 universities and two B2B battery companies as active users providing feedback. While none are paying yet, we have strong interest and LOIs from both battery companies to convert to paid contracts once V1 ships. Additionally, BPCL, a major oil company, joined the waitlist following a live demo.</p>
-        <p class="answer" style="font-style: italic;">e-TRNL's CTO told us directly: this eliminates a simulation engineer hire and their COMSOL licence</p>
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">How many active users or customers do you have? How many are paying?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">We have three individuals at Tier-1 universities and two B2B battery companies as active users providing feedback. While none are paying yet, we have strong interest and LOIs from both battery companies to convert to paid contracts once V1 ships. Additionally, BPCL, a major oil company, joined the waitlist following a live demo.</p>
+          <p class="qa-a-text"><em>e-TRNL's CTO told us directly: this eliminates a simulation engineer hire and their COMSOL licence</em></p>
+        </div>
       </div>
 
-      <div class="qa-block">
-        <p class="question">Do you have revenue?</p>
-        <p class="answer">no</p>
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Do you have revenue?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">no</p>
+        </div>
       </div>
 
-      <div class="qa-block">
-        <p class="question">If you are applying with the same idea as a previous batch, did anything change? If you applied with a different idea, why did you pivot and what did you learn from the last idea?</p>
-        <p class="answer">I'm applying with different idea. BlueDot Labs is the direct solution of the problem we faced daily at ProtonCraft for 1.5 years. We desperately needed AI simulation tools to pace up R&D, so we started building it.</p>
-        <p class="answer">At ProtonCraft, we built 8x better technology and reached the pre-pilot stage (TRL-6). However, our velocity was constantly bottlenecked by slow-moving customers (oil refineries) and heavy regulations.</p>
-        <p class="answer">Our core learning: relying on legacy industries to validate your tech kills momentum. We pivoted to software so we can own the entire product cycle and move fast. Instead of selling to dinosaurs, we want to outpace them.</p>
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Why did you pivot from ProtonCraft?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">I'm applying with different idea. BlueDot Labs is the direct solution of the problem we faced daily at ProtonCraft for 1.5 years. We desperately needed AI simulation tools to pace up R&D, so we started building it.</p>
+          <p class="qa-a-text">At ProtonCraft, we built 8x better technology and reached the pre-pilot stage (TRL-6). However, our velocity was constantly bottlenecked by slow-moving customers (oil refineries) and heavy regulations.</p>
+          <p class="qa-a-text">Our core learning: relying on legacy industries to validate your tech kills momentum. We pivoted to software so we can own the entire product cycle and move fast. Instead of selling to dinosaurs, we want to outpace them.</p>
+        </div>
       </div>
 
-      <div class="qa-block">
-        <p class="question">If you have already participated or committed to participate in an incubator, "accelerator" or "pre-accelerator" program, please tell us about it.</p>
-        <p class="answer">No</p>
-      </div>
-    </section>
-
-    <section class="fade-in">
-      <h2>Idea</h2>
-
-      <div class="qa-block">
-        <p class="question">Why did you pick this idea to work on? Do you have domain expertise in this area? How do you know people need what you're making?</p>
-        <p class="answer">We want to build a faster research ecosystem where the focus is science, not labor. We picked this idea because we've lived it - watching researchers lose weeks wrestling with clunky simulation tools, writing boilerplate scripts, and stitching together workflows that should just work, and we saw this pattern repeat across labs, startups, and enterprises. And with current emerging AI models, we've observed it's possible to do now what wasn't possible even 6 months ago.</p>
-        <p class="answer">Yes, we both have domain expertise in our field. I have lived the exact problem building ProtonCraft's electrocatalyst, and Kamal has scaled two startups as a founding AI engineer - he has also built simulations and has a keen interest in the space.</p>
-        <p class="answer">Talking to customers like e-TRNL and Indi, we realised they not only need specific software licenses but also need a specialist whose only work is to translate science into software GUI.</p>
-      </div>
-
-      <div class="qa-block">
-        <p class="question">Who are your competitors? What do you understand about your business that they don't?</p>
-        <p class="answer">Incumbents like COMSOL, ASPEN, ANSYS, and SimScale are clusters of physics solvers wrapped in black boxes with decades-long update cycles. New AI-native players like Godela (YC), PhysicsX are interesting, but they operate in mostly mechanical engineering - which doesn't fully overlap with energy R&D.</p>
-        <p class="answer">Incumbents are black boxes. Researchers can't see the physics, can't swap solvers, can't afford the licence. 80% of better open-source solvers sit unused because integration took weeks - until now.</p>
-        <p class="answer">AI is finally good enough to orchestrate domain-specific simulations correctly. We're building at exactly that inflection point - modular, transparent, pay-per-use. Starting with energy R&D where wrong answers cost years.</p>
-      </div>
-
-      <div class="qa-block">
-        <p class="question">How do or will you make money? How much could you make?</p>
-        <p class="answer">6 potential B2B customers in pipeline at Bangalore, estimated $147K ARR, 6 weeks to close post public launch.</p>
-        <p class="answer">US launch 6 months: SF energy startups at 2–3× deal sizes, energy companies in Alabama and Texas.</p>
-        <p class="answer">Month 9: $647K ARR, 13 customers, 3 geographies.</p>
-        <p class="answer">There are 3,000 teams globally with identical budget profiles in energy R&D alone that's a $927M ARR opportunity. And that's just 5% of the $20B simulation software market, growing at 10.4% annually to $36B by 2030.</p>
-      </div>
-
-      <div class="qa-block">
-        <p class="question">Which category best applies to your company?</p>
-        <p class="answer">B2B SaaS</p>
-      </div>
-
-      <div class="qa-block">
-        <p class="question">If you had any other ideas you considered applying with, please list them. One may be something we've been waiting for.</p>
-        <p class="answer">Our core belief: scientists should only do science.</p>
-        <p class="answer">Physical AI to automate all manual labor in wet labs - starting with electrochemistry.</p>
-        <p class="answer">AI-powered research lab that runs autonomously and does breakthrough science - a second Bell Labs, but limitless.</p>
-      </div>
-    </section>
-
-    <section class="fade-in">
-      <h2>Equity</h2>
-
-      <div class="qa-block">
-        <p class="question">Have you formed ANY legal entity yet?</p>
-        <p class="answer">no</p>
-      </div>
-
-      <div class="qa-block">
-        <p class="question">If you have not formed the company yet, describe the planned equity ownership breakdown.</p>
-        <p class="answer">We've planned equal split as we both have complimentary roles crucial for company growth.</p>
-        <p class="answer">Kunal - CEO, 50%</p>
-        <p class="answer">Kamal - CTO, 50%</p>
-      </div>
-
-      <div class="qa-block">
-        <p class="question">Have you taken any investment yet?</p>
-        <p class="answer">no</p>
-      </div>
-
-      <div class="qa-block">
-        <p class="question">Are you currently fundraising?</p>
-        <p class="answer">no</p>
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">If you have already participated or committed to participate in an incubator, "accelerator" or "pre-accelerator" program, please tell us about it.</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">No</p>
+        </div>
       </div>
     </section>
 
-    <section class="contact-section fade-in">
-      <h2>Contact</h2>
+    <section id="idea" class="section fade-in">
+      <div class="section-header">
+        <div class="section-icon">💡</div>
+        <h2>Idea</h2>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Why did you pick this idea to work on? Do you have domain expertise in this area?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">We want to build a faster research ecosystem where the focus is science, not labor. We picked this idea because we've lived it - watching researchers lose weeks wrestling with clunky simulation tools, writing boilerplate scripts, and stitching together workflows that should just work, and we saw this pattern repeat across labs, startups, and enterprises. And with current emerging AI models, we've observed it's possible to do now what wasn't possible even 6 months ago.</p>
+          <p class="qa-a-text">Yes, we both have domain expertise in our field. I have lived the exact problem building ProtonCraft's electrocatalyst, and Kamal has scaled two startups as a founding AI engineer - he has also built simulations and has a keen interest in the space.</p>
+          <p class="qa-a-text">Talking to customers like e-TRNL and Indi, we realised they not only need specific software licenses but also need a specialist whose only work is to translate science into software GUI.</p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Who are your competitors? What do you understand about your business that they don't?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">Incumbents like COMSOL, ASPEN, ANSYS, and SimScale are clusters of physics solvers wrapped in black boxes with decades-long update cycles. New AI-native players like Godela (YC), PhysicsX are interesting, but they operate in mostly mechanical engineering - which doesn't fully overlap with energy R&D.</p>
+          <p class="qa-a-text">Incumbents are black boxes. Researchers can't see the physics, can't swap solvers, can't afford the licence. 80% of better open-source solvers sit unused because integration took weeks - until now.</p>
+          <p class="qa-a-text">AI is finally good enough to orchestrate domain-specific simulations correctly. We're building at exactly that inflection point - modular, transparent, pay-per-use. Starting with energy R&D where wrong answers cost years.</p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">How do or will you make money? How much could you make?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">6 potential B2B customers in pipeline at Bangalore, estimated $147K ARR, 6 weeks to close post public launch.</p>
+          <p class="qa-a-text">US launch 6 months: SF energy startups at 2–3× deal sizes, energy companies in Alabama and Texas.</p>
+          <p class="qa-a-text">Month 9: $647K ARR, 13 customers, 3 geographies.</p>
+          <p class="qa-a-text">There are 3,000 teams globally with identical budget profiles in energy R&D alone that's a $927M ARR opportunity. And that's just 5% of the $20B simulation software market, growing at 10.4% annually to $36B by 2030.</p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Which category best applies to your company?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">B2B SaaS</p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">If you had any other ideas you considered applying with, please list them.</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">Our core belief: scientists should only do science.</p>
+          <p class="qa-a-text">Physical AI to automate all manual labor in wet labs - starting with electrochemistry.</p>
+          <p class="qa-a-text">AI-powered research lab that runs autonomously and does breakthrough science - a second Bell Labs, but limitless.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade-in">
+      <div class="section-header">
+        <div class="section-icon">⚖️</div>
+        <h2>Equity</h2>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Have you formed ANY legal entity yet?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">no</p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Planned equity ownership breakdown</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">We've planned equal split as we both have complimentary roles crucial for company growth.</p>
+          <p class="qa-a-text">Kunal - CEO, 50%</p>
+          <p class="qa-a-text">Kamal - CTO, 50%</p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Have you taken any investment yet?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">no</p>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-question">
+          <div class="qa-q-icon">Q</div>
+          <div class="qa-q-text">Are you currently fundraising?</div>
+        </div>
+        <div class="qa-answer">
+          <p class="qa-a-text">no</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section fade-in">
+      <h2>Get in Touch</h2>
+      <p>We're building a faster research ecosystem where the focus is science, not labor.</p>
       <div class="contact-links">
-        <a href="mailto:shawkunal032@gmail.com">Email Kunal</a>
-        <a href="mailto:kamalutla@gmail.com">Email Kamal</a>
-        <a href="https://bluedotlabs.org/" target="_blank">Visit Website</a>
+        <a href="mailto:shawkunal032@gmail.com">📧 Email Kunal</a>
+        <a href="mailto:kamalutla@gmail.com">📧 Email Kamal</a>
+        <a href="https://bluedotlabs.org/" target="_blank">🌐 Visit Website</a>
       </div>
     </section>
+
+    <footer class="footer">
+      BlueDot Labs © 2026 • Bengaluru • San Francisco
+    </footer>
   </div>
 
   <script src="script.js"></script>
