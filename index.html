@@ -1,436 +1,765 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BlueDot Labs - Investor Deck</title>
-  <meta name="description" content="Physics simulations for energy R&D, 100x faster">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta content="IE=edge;chrome=1" http-equiv="X-UA-Compatible">
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="initial-scale=1, width=device-width, height=device-height" name="viewport">
+  <meta content="follow" name="robots">
+  <meta content="website" property="og:type">
+  <meta content="en_US" property="og:locale">
+  <meta content="Apply to Y Combinator" property="og:site_name">
+  <meta content="BlueDot Labs — YC Application" property="og:title">
+  <title>Apply to Y Combinator</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --yc-orange: #F26522;
+      --text-primary: #16140f;
+      --text-secondary: #6b7280;
+      --text-link: #0066cc;
+      --bg-body: #f5f5f5;
+      --bg-white: #ffffff;
+      --bg-subtle: #f9fafb;
+      --border-light: #e5e7eb;
+      --border-med: #d1d5db;
+      --positive-bg: #16a34a;
+      --badge-bg: #dcfce7;
+      --badge-text: #15803d;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-body);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .serif-button-text {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 14px;
+    }
+
+    a { color: var(--text-link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ===== HEADER ===== */
+    .yc-header {
+      width: 100%;
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .yc-header-inner {
+      display: flex;
+      align-items: center;
+      padding: 16px 24px;
+    }
+    .yc-logo {
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+    }
+    .yc-logo img {
+      height: 40px;
+      width: 40px;
+    }
+    .yc-logo-text {
+      margin-left: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .yc-header-right {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      padding-right: 16px;
+    }
+    .yc-header-right .username {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .yc-header-right .divider {
+      width: 1px;
+      height: 20px;
+      background: rgba(0,0,0,0.15);
+      margin: 0 16px 0 12px;
+    }
+    .yc-header-right .settings-link {
+      color: var(--text-secondary);
+      margin-left: 8px;
+      font-size: 18px;
+      line-height: 1;
+    }
+    .yc-header-right .settings-link:hover { color: var(--text-primary); text-decoration: none; }
+
+    /* ===== PAGE TITLE ===== */
+    .page-title-area {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 32px 16px 0;
+    }
+    .back-link {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 14px;
+      color: var(--text-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+    .back-link .material-symbols-outlined { font-size: 16px; }
+    .page-header {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 0;
+      color: var(--text-primary);
+    }
+    .page-subheader {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    /* ===== LAYOUT GRID ===== */
+    .apply-content {
+      max-width: 100%;
+      margin-top: 32px;
+    }
+    .apply-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    @media (min-width: 1280px) {
+      .apply-grid {
+        grid-template-columns: minmax(0,1fr) 640px minmax(0,1fr);
+      }
+    }
+
+    /* ===== LEFT SIDEBAR NAV ===== */
+    .sidebar-nav {
+      display: none;
+    }
+    @media (min-width: 1280px) {
+      .sidebar-nav {
+        display: block;
+        padding-right: 96px;
+      }
+      .sidebar-nav-inner {
+        position: sticky;
+        top: 32px;
+      }
+    }
+    .sidebar-nav a {
+      display: block;
+      padding: 8px 16px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+      border-radius: 6px;
+      transition: opacity 0.2s;
+      text-decoration: none;
+    }
+    .sidebar-nav a.active { opacity: 1; }
+    .sidebar-nav a:not(.active) { opacity: 0.4; }
+    .sidebar-nav a:not(.active):hover { opacity: 0.6; text-decoration: none; }
+
+    /* ===== MAIN CONTENT ===== */
+    .main-content {
+      max-width: 640px;
+      width: 100%;
+    }
+    @media (min-width: 1280px) {
+      .main-content { max-width: none; }
+    }
+
+    /* ===== SECTIONS ===== */
+    .apply-section { margin-bottom: 64px; }
+    .apply-section-header {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 32px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border-light);
+    }
+
+    /* ===== FOUNDER CARDS ===== */
+    .founder-cards { margin-bottom: 32px; display: flex; flex-direction: column; gap: 16px; }
+    .founder-card-yc {
+      display: flex;
+      flex-direction: column;
+      justify-content: between;
+      border: 1px solid var(--text-primary);
+      border-radius: 8px;
+      padding: 24px 32px;
+      cursor: default;
+    }
+    .founder-card-yc-top {
+      display: flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .founder-card-yc-name {
+      font-size: 18px;
+      font-weight: 500;
+      margin-right: 10px;
+    }
+    .founder-card-yc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      border-radius: 9999px;
+      padding: 4px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      background: var(--positive-bg);
+      color: white;
+    }
+    .founder-card-yc-badge .material-symbols-outlined { font-size: 16px; }
+    .founder-card-yc-chevron {
+      border-radius: 9999px;
+      padding: 8px;
+      transition: transform 0.2s, background 0.2s, color 0.2s;
+    }
+    .founder-card-yc:hover .founder-card-yc-chevron {
+      background: var(--text-primary);
+      color: white;
+    }
+    .founder-card-yc-detail {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-light);
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===== Q&A BLOCKS ===== */
+    .qa-block {
+      margin-bottom: 48px;
+    }
+    .qa-block:last-child { margin-bottom: 0; }
+    .qa-question {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    .qa-question-subtitle {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+    .qa-answer {
+      white-space: pre-line;
+      font-size: 16px;
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+    .qa-answer a {
+      color: var(--text-link);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .qa-answer a:hover { opacity: 0.8; }
+
+    /* ===== VIDEO PLAYER ===== */
+    .video-preview {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+    }
+    .video-preview video {
+      width: 100%;
+      display: block;
+    }
+
+    /* ===== CODING SESSION BLOCK ===== */
+    .coding-session-block {
+      max-height: 400px;
+      overflow: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border-light);
+      background: var(--bg-white);
+      padding: 16px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .coding-session-block h1 { font-size: 18px; margin-bottom: 8px; }
+    .coding-session-block h2 { font-size: 16px; margin-top: 16px; margin-bottom: 4px; font-weight: 600; }
+    .coding-session-block h3 { font-size: 15px; margin-top: 12px; font-weight: 600; }
+    .coding-session-block p { margin-bottom: 8px; }
+    .coding-session-block ul, .coding-session-block ol { padding-left: 20px; margin-bottom: 8px; }
+    .coding-session-block li { margin-bottom: 4px; }
+    .coding-session-block code { background: var(--bg-subtle); padding: 1px 4px; border-radius: 3px; font-size: 13px; }
+    .coding-session-block pre { background: var(--bg-subtle); padding: 12px; border-radius: 6px; overflow-x: auto; margin-bottom: 8px; }
+    .coding-session-block pre code { background: none; padding: 0; }
+    .coding-session-block hr { border: none; border-top: 1px solid var(--border-light); margin: 16px 0; }
+    .coding-session-block table { width: 100%; border-collapse: collapse; margin-bottom: 8px; }
+    .coding-session-block th, .coding-session-block td { border: 1px solid var(--border-light); padding: 6px 10px; font-size: 13px; text-align: left; }
+    .coding-session-block th { background: var(--bg-subtle); font-weight: 600; }
+
+    /* ===== FOOTER ===== */
+    .yc-footer {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      border-top: 1px solid var(--border-light);
+      background: var(--bg-white);
+      margin-top: 48px;
+    }
+    .yc-footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
+    .yc-footer a {
+      font-size: 14px;
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-decoration-color: var(--text-secondary);
+      text-underline-offset: 2px;
+      transition: all 0.2s;
+    }
+    .yc-footer a:hover {
+      text-decoration-color: var(--text-primary);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .page-title-area { padding: 24px 12px 0; }
+      .page-header { font-size: 22px; }
+      .page-subheader { font-size: 16px; }
+      .apply-section { margin-bottom: 48px; }
+      .qa-block { margin-bottom: 36px; }
+      .founder-card-yc { padding: 16px 20px; }
+    }
+  </style>
 </head>
-<body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">BlueDot Labs</a>
-      <div class="nav-links">
-        <a href="#founders">Founders</a>
-        <a href="#company">Company</a>
-        <a href="#progress">Progress</a>
-        <a href="#idea">Idea</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
+<body class="apps-show">
 
-  <div class="hero">
-    <div class="container">
-      <div class="hero-badge">B2B SaaS • Energy R&D</div>
-      <h1>BlueDot Labs</h1>
-      <p class="tagline">Physics simulations for energy R&D, 100x faster</p>
-      <p class="subtitle">Bengaluru, India → San Francisco, USA</p>
+  <!-- HEADER -->
+  <div class="yc-header">
+    <div class="yc-header-inner">
+      <div class="yc-logo">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="8" fill="#F26522"/>
+          <text x="12" y="30" font-family="Georgia, serif" font-size="26" font-weight="bold" fill="white">Y</text>
+        </svg>
+        <span class="yc-logo-text">Y Combinator</span>
+      </div>
+      <div class="yc-header-right">
+        <span class="username">kunalshaw79</span>
+        <div class="divider"></div>
+        <a href="#" class="settings-link" title="Account Settings">
+          <span class="material-icons-outlined" style="font-size:18px">settings</span>
+        </a>
+      </div>
     </div>
   </div>
 
-  <div class="container">
-    <section id="founders" class="section fade-in">
-      <div class="section-header">
-        <div class="section-icon">👤</div>
-        <h2>Founders</h2>
-      </div>
-
-      <div class="video-wrapper">
-        <div class="video-label"><span>▶</span> Founder Video</div>
-        <div class="video-container">
-          <video controls preload="metadata">
-            <source src="assets/founders-video.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">How long have the founders known one another and how did you meet? Have any of the founders not met in person?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">At Engineering Physics at IIT Roorkee, we've known each other for five years and spent our final year working together on building an intelligent Battery Management System (BMS) in the ESL lab which worked for sodium ion cells.</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Who writes code, or does other technical work on your product? Was any of it done by a non-founder?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">Kamal writes the code and Kunal make scientific modules which agent uses to orchestrate simulations.</p>
-        </div>
-      </div>
-
-      <div class="founder-grid">
-        <div class="founder-card">
-          <h3>Kunal Shaw</h3>
-          <p class="role"><span class="role-badge">CEO</span> 50% Equity</p>
-          <ul>
-            <li>IIT Roorkee, Engineering Physics (2025)</li>
-            <li>1.5 years running ProtonCraft (TRL-6, LOIs with BPCL & IOCL)</li>
-            <li>Built electrocatalyst 8X better than global benchmark in 3 months</li>
-            <li>Hult Prize Top 6 Global Finalist (Top 0.03%)</li>
-            <li>Winner, Together 5.0 Indo-Canadian Tech Startup Competition</li>
-            <li>JEE 99% percentile (Top 1% of 1.2M+ candidates)</li>
-          </ul>
-          <div class="links">
-            <a href="https://www.linkedin.com/in/shawkunal031/" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-
-        <div class="founder-card">
-          <h3>Kamal Utla</h3>
-          <p class="role"><span class="role-badge">CTO</span> 50% Equity</p>
-          <ul>
-            <li>IIT Roorkee, Engineering Physics (2024)</li>
-            <li>Founding AI Engineer at BorderPlus - built entire AI stack</li>
-            <li>Scaled Convai to $3M ARR as sole LLM/NLP owner</li>
-            <li>Mitacs Globalink Research Fellow (Canada)</li>
-            <li>Winner, IBM Qiskit Fall Fest 2021 - Quantum Computing Hackathon</li>
-            <li>Top 5 in department at IIT Roorkee</li>
-          </ul>
-          <div class="links">
-            <a href="https://www.linkedin.com/in/kamal-utla/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/kamal20122012" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="company" class="section fade-in">
-      <div class="section-header">
-        <div class="section-icon">🏢</div>
-        <h2>Company</h2>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Company name</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">BlueDot Labs</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Describe what your company does in 50 characters or less.</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">Physics simulations for energy R&D, 100x faster</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Company URL</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text"><a href="https://bluedotlabs.org/" target="_blank">https://bluedotlabs.org/</a></p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Product link (login: demo@bdlabs.ai / pimono@032)</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text"><a href="https://bluedotlabs.org/login" target="_blank">https://bluedotlabs.org/login</a></p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">What is your company going to make? Please describe your product and what it does or will do.</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">We've built an AI-native platform that creates battery simulations in minutes, eliminating the 7–8 days it takes companies like e-TRNL Energy.</p>
-          <p class="qa-a-text">The AI agent plans, builds, and runs scientific simulations from plain text. It converts a text prompt into an editable flowchart and clarifies constraints with the researcher before running the physical model on our compute.</p>
-          <p class="qa-a-text">Researchers can instantly run parameter sweeps and visualize results, condensing weeks of complex scientific modeling into minutes of prompting so researchers can focus purely on the science.</p>
-        </div>
-      </div>
-
-      <div class="video-wrapper">
-        <div class="video-label"><span>▶</span> Demo Video</div>
-        <div class="video-container">
-          <video controls preload="metadata">
-            <source src="assets/demo-video.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Where do you live now, and where would the company be based after YC?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">Bengaluru, India / San Francisco, USA</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Explain your decision regarding location.</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">SF gives our AI product direct access to the YC network, high-paying customers, top talent, and deep-tech investors.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="progress" class="section fade-in">
-      <div class="section-header">
-        <div class="section-icon">📈</div>
-        <h2>Progress</h2>
-      </div>
-
-      <div class="stats-row">
-        <div class="stat-box">
-          <div class="number">3</div>
-          <div class="label">Months Building</div>
-        </div>
-        <div class="stat-box">
-          <div class="number">5</div>
-          <div class="label">Active Users</div>
-        </div>
-        <div class="stat-box">
-          <div class="number">2</div>
-          <div class="label">B2B LOIs</div>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">How far along are you?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">In 3 months, we shipped V0, obtained LOIs with two B2B battery companies (e-TRNL Energy, Indi Energy), and onboarded three Tier-1 institutions (Caltech, TU Munich, TU Dresden) as design partners. We're now iterating to V1 based on our customers' feedback to convert them into paid contracts.</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">How long have each of you been working on this? How much of that has been full-time?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">We are building this product since 3 months. Kunal is full time and Kamal joins full-time June 4th, currently serving notice.</p>
-          <p class="qa-a-text">Kunal ran ProtonCraft for 1.5 years. BlueDotLabs is the internal tool we built out of desperation. Realized every deep-tech team has the same problem.</p>
-          <p class="qa-a-text">ProtonCraft is a local maxima. We're going for the bigger one.</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">What tech stack are you using, or planning to use, to build your product?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">Backend: Python. Coding agent server: TypeScript (powered by PiMono — the same engine behind OpenClaw). DB: PostgreSQL. Frontend: Next.js. Flow builder: React Flow.</p>
-          <p class="qa-a-text">We build with Claude Code as our primary coding agent, falling back to OpenCode with GLM, Obra superpowers, and Oh My OpenCode. Both are customized with Playwright skills for E2E testing and integrated DevOps workflows. UI/UX starts in Google Stitch — screens go straight to the agent as reference.</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Are people using your product?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">Yes</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">How many active users or customers do you have? How many are paying?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">We have three individuals at Tier-1 universities and two B2B battery companies as active users providing feedback. While none are paying yet, we have strong interest and LOIs from both battery companies to convert to paid contracts once V1 ships. Additionally, BPCL, a major oil company, joined the waitlist following a live demo.</p>
-          <p class="qa-a-text"><em>e-TRNL's CTO told us directly: this eliminates a simulation engineer hire and their COMSOL licence</em></p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Do you have revenue?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">no</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Why did you pivot from ProtonCraft?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">I'm applying with different idea. BlueDot Labs is the direct solution of the problem we faced daily at ProtonCraft for 1.5 years. We desperately needed AI simulation tools to pace up R&D, so we started building it.</p>
-          <p class="qa-a-text">At ProtonCraft, we built 8x better technology and reached the pre-pilot stage (TRL-6). However, our velocity was constantly bottlenecked by slow-moving customers (oil refineries) and heavy regulations.</p>
-          <p class="qa-a-text">Our core learning: relying on legacy industries to validate your tech kills momentum. We pivoted to software so we can own the entire product cycle and move fast. Instead of selling to dinosaurs, we want to outpace them.</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">If you have already participated or committed to participate in an incubator, "accelerator" or "pre-accelerator" program, please tell us about it.</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">No</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="idea" class="section fade-in">
-      <div class="section-header">
-        <div class="section-icon">💡</div>
-        <h2>Idea</h2>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Why did you pick this idea to work on? Do you have domain expertise in this area?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">We want to build a faster research ecosystem where the focus is science, not labor. We picked this idea because we've lived it - watching researchers lose weeks wrestling with clunky simulation tools, writing boilerplate scripts, and stitching together workflows that should just work, and we saw this pattern repeat across labs, startups, and enterprises. And with current emerging AI models, we've observed it's possible to do now what wasn't possible even 6 months ago.</p>
-          <p class="qa-a-text">Yes, we both have domain expertise in our field. I have lived the exact problem building ProtonCraft's electrocatalyst, and Kamal has scaled two startups as a founding AI engineer - he has also built simulations and has a keen interest in the space.</p>
-          <p class="qa-a-text">Talking to customers like e-TRNL and Indi, we realised they not only need specific software licenses but also need a specialist whose only work is to translate science into software GUI.</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Who are your competitors? What do you understand about your business that they don't?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">Incumbents like COMSOL, ASPEN, ANSYS, and SimScale are clusters of physics solvers wrapped in black boxes with decades-long update cycles. New AI-native players like Godela (YC), PhysicsX are interesting, but they operate in mostly mechanical engineering - which doesn't fully overlap with energy R&D.</p>
-          <p class="qa-a-text">Incumbents are black boxes. Researchers can't see the physics, can't swap solvers, can't afford the licence. 80% of better open-source solvers sit unused because integration took weeks - until now.</p>
-          <p class="qa-a-text">AI is finally good enough to orchestrate domain-specific simulations correctly. We're building at exactly that inflection point - modular, transparent, pay-per-use. Starting with energy R&D where wrong answers cost years.</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">How do or will you make money? How much could you make?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">6 potential B2B customers in pipeline at Bangalore, estimated $147K ARR, 6 weeks to close post public launch.</p>
-          <p class="qa-a-text">US launch 6 months: SF energy startups at 2–3× deal sizes, energy companies in Alabama and Texas.</p>
-          <p class="qa-a-text">Month 9: $647K ARR, 13 customers, 3 geographies.</p>
-          <p class="qa-a-text">There are 3,000 teams globally with identical budget profiles in energy R&D alone that's a $927M ARR opportunity. And that's just 5% of the $20B simulation software market, growing at 10.4% annually to $36B by 2030.</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Which category best applies to your company?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">B2B SaaS</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">If you had any other ideas you considered applying with, please list them.</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">Our core belief: scientists should only do science.</p>
-          <p class="qa-a-text">Physical AI to automate all manual labor in wet labs - starting with electrochemistry.</p>
-          <p class="qa-a-text">AI-powered research lab that runs autonomously and does breakthrough science - a second Bell Labs, but limitless.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section fade-in">
-      <div class="section-header">
-        <div class="section-icon">⚖️</div>
-        <h2>Equity</h2>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Have you formed ANY legal entity yet?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">no</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Planned equity ownership breakdown</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">We've planned equal split as we both have complimentary roles crucial for company growth.</p>
-          <p class="qa-a-text">Kunal - CEO, 50%</p>
-          <p class="qa-a-text">Kamal - CTO, 50%</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Have you taken any investment yet?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">no</p>
-        </div>
-      </div>
-
-      <div class="qa-card">
-        <div class="qa-question">
-          <div class="qa-q-icon">Q</div>
-          <div class="qa-q-text">Are you currently fundraising?</div>
-        </div>
-        <div class="qa-answer">
-          <p class="qa-a-text">no</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact-section fade-in">
-      <h2>Get in Touch</h2>
-      <p>We're building a faster research ecosystem where the focus is science, not labor.</p>
-      <div class="contact-links">
-        <a href="mailto:shawkunal032@gmail.com">📧 Email Kunal</a>
-        <a href="mailto:kamalutla@gmail.com">📧 Email Kamal</a>
-        <a href="https://bluedotlabs.org/" target="_blank">🌐 Visit Website</a>
-      </div>
-    </section>
-
-    <footer class="footer">
-      BlueDot Labs © 2026 • Bengaluru • San Francisco
-    </footer>
+  <!-- PAGE TITLE -->
+  <div class="page-title-area">
+    <a href="#" class="back-link">
+      <span class="material-symbols-outlined">chevron_left</span> Back
+    </a>
+    <div style="margin-bottom:48px">
+      <h1 class="page-header"><span>BlueDot Labs</span></h1>
+      <h2 class="page-subheader">Summer 2026</h2>
+    </div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- MAIN LAYOUT -->
+  <div class="apply-content">
+    <div class="apply-grid">
+
+      <!-- LEFT SIDEBAR -->
+      <nav class="sidebar-nav">
+        <div class="sidebar-nav-inner">
+          <a href="#f_founders" class="active">Founders</a>
+          <a href="#f_founder_video">Founder Video</a>
+          <a href="#f_company">Company</a>
+          <a href="#f_progress">Progress</a>
+          <a href="#f_idea">Idea</a>
+          <a href="#f_equity">Equity</a>
+          <a href="#f_curious">Curious</a>
+          <a href="#f_batch">Batch Preference</a>
+        </div>
+      </nav>
+
+      <!-- MAIN CONTENT -->
+      <div class="main-content">
+
+        <!-- FOUNDERS -->
+        <div id="f_founders" class="apply-section">
+          <div class="apply-section-header">Founders</div>
+
+          <div class="founder-cards">
+            <div class="founder-card-yc">
+              <div class="founder-card-yc-top">
+                <div style="display:flex;align-items:center">
+                  <span class="founder-card-yc-name">Kunal Shaw</span>
+                  <span class="founder-card-yc-badge">
+                    <span class="material-symbols-outlined">check_circle</span> Profile complete
+                  </span>
+                </div>
+                <span class="material-icons-outlined founder-card-yc-chevron">keyboard_arrow_down</span>
+              </div>
+              <div class="founder-card-yc-detail">
+                CEO, 50% equity<br>
+                IIT Roorkee, Engineering Physics (2025)<br>
+                1.5 years running ProtonCraft (TRL-6)<br>
+                Built electrocatalyst 8x better than global benchmark in 3 months<br>
+                Hult Prize Top 6 Global Finalist (Top 0.03%)<br>
+                Winner, Together 5.0 Indo-Canadian Tech Startup Competition
+              </div>
+            </div>
+            <div class="founder-card-yc">
+              <div class="founder-card-yc-top">
+                <div style="display:flex;align-items:center">
+                  <span class="founder-card-yc-name">Kamal Utla</span>
+                  <span class="founder-card-yc-badge">
+                    <span class="material-symbols-outlined">check_circle</span> Profile complete
+                  </span>
+                </div>
+                <span class="material-icons-outlined founder-card-yc-chevron">keyboard_arrow_down</span>
+              </div>
+              <div class="founder-card-yc-detail">
+                CTO, 50% equity<br>
+                IIT Roorkee, Engineering Physics (2024)<br>
+                Founding AI Engineer at BorderPlus — built entire AI stack<br>
+                Scaled Convai to $3M ARR as sole LLM/NLP owner<br>
+                Mitacs Globalink Research Fellow (Canada)<br>
+                Winner, IBM Qiskit Fall Fest 2021
+              </div>
+            </div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">How long have the founders known one another and how did you meet? Have any of the founders not met in person?</div>
+            <div class="qa-answer">At Engineering Physics at IIT Roorkee, we've known each other for five years and spent our final year working together on building an intelligent Battery Management System (BMS) in the ESL lab which worked for sodium ion cells.</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">Who writes code, or does other technical work on your product? Was any of it done by a non-founder? Please explain.</div>
+            <div class="qa-answer">Kamal writes the code and Kunal make scientific modules which agent uses to orchestrate simulations.</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">Are you looking for a cofounder?</div>
+            <div class="qa-answer">No</div>
+          </div>
+        </div>
+
+        <!-- FOUNDER VIDEO -->
+        <div id="f_founder_video" class="apply-section">
+          <div class="apply-section-header">Founder Video</div>
+          <div class="video-preview">
+            <video controls loop preload="metadata">
+              <source src="https://kunalshaw79.github.io/bluedot-investor-page/assets/founders-video.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <!-- COMPANY -->
+        <div id="f_company" class="apply-section">
+          <div class="apply-section-header">Company</div>
+
+          <div class="qa-block">
+            <div class="qa-question">Company name</div>
+            <div class="qa-answer">BlueDot Labs</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">Describe what your company does in 50 characters or less.</div>
+            <div class="qa-answer">Physics simulations for energy R&amp;D, 100x faster</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">Company URL, if any</div>
+            <div class="qa-answer"><a href="https://bluedotlabs.org/" target="_blank">https://bluedotlabs.org/</a></div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">Demo Video</div>
+            <div class="video-preview">
+              <video controls loop preload="metadata">
+                <source src="https://kunalshaw79.github.io/bluedot-investor-page/assets/demo-video.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">Please provide a link to the product, if any.</div>
+            <div class="qa-answer"><a href="https://bluedotlabs.org/login" target="_blank">https://bluedotlabs.org/login</a></div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question" style="font-size:14px;color:var(--text-secondary)">If login credentials are required for the link above, enter them here.</div>
+            <div class="qa-answer">demo@bdlabs.ai / pimono@032</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">What is your company going to make? Please describe your product and what it does or will do.</div>
+            <div class="qa-answer">We've built an AI-native platform that reduces complex battery simulations from 7-8 days to under 30 minutes witnessed by e-TRNL energy, a battery company.
+
+The AI agent plans, builds, and runs scientific simulations from plain text. It converts a text prompt into an editable flowchart and clarifies constraints with the researcher before running the physical model on our compute.
+
+Researchers can instantly run parameter sweeps and visualize results, condensing weeks of complex scientific modeling into minutes of prompting so researchers can focus purely on the science.</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">Where do you live now, and where would the company be based after YC?</div>
+            <div class="qa-answer">Bengaluru, India / San Francisco, USA</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">Explain your decision regarding location.</div>
+            <div class="qa-answer">SF gives our AI product direct access to the YC network, high-paying customers, top talent, and deep-tech investors.</div>
+          </div>
+        </div>
+
+        <!-- PROGRESS -->
+        <div id="f_progress" class="apply-section">
+          <div class="apply-section-header">Progress</div>
+
+          <div class="qa-block">
+            <div class="qa-question">How far along are you?</div>
+            <div class="qa-answer">In 3 months, we shipped V0, obtained paid contracts with two B2B battery companies (e-TRNL Energy, Arkle Energy) which executes with V1 launch, and onboarded three Tier-1 institutions (Caltech, TU Munich, TU Dresden) as design partners. We're now iterating to V1 based on our customers' feedback to deliver on those contracts.</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">How long have each of you been working on this? How much of that has been full-time? Please explain.</div>
+            <div class="qa-answer">We are building this product since 3 months. Kunal is full time and Kamal joins full-time June 4th, currently serving notice.
+
+Kunal ran ProtonCraft for 1.5 years. BlueDotLabs is the internal tool we built out of desperation. Realized every deep-tech team has the same problem.
+ProtonCraft is a local maxima. We're going for the bigger one.</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">What tech stack are you using, or planning to use, to build this product? Include AI models and AI coding tools you use.</div>
+            <div class="qa-answer">Backend: Python. Coding agent server: TypeScript (powered by PiMono — the same engine behind OpenClaw). DB: PostgreSQL. Frontend: Next.js. Flow builder: React Flow.
+We build with Claude Code as our primary coding agent, falling back to OpenCode with GLM, Obra superpowers, and Oh My OpenCode. Both are customized with Playwright skills for E2E testing and integrated DevOps workflows. UI/UX starts in Google Stitch — screens go straight to the agent as reference.</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">Optional: attach a coding agent session you're particularly proud of.</div>
+            <div class="qa-question-subtitle">Many coding agents (i.e. Claude Code, Cursor, etc) have a /export command, or otherwise include a button allowing you to export a transcript. Can be text or markdown.</div>
+            <div class="coding-session-block">
+              <h1>Parametric 3D web editor for e-TRNL unit cell</h1>
+              <p><strong>Session ID:</strong> ses_23690f7deffeNa0pUm1Hql7pB4<br>
+              <strong>Slug:</strong> jolly-river<br>
+              <strong>Duration:</strong> 55.6 hours<br>
+              <strong>Messages:</strong> 951</p>
+              <hr>
+              <p>A patent-faithful 3D mesh of the <strong>e-TRNL 3DEA (Three-Dimensional Electrode Architecture)</strong> battery unit cell. This is a lithium-ion cell geometry where cathode material is formed into vertical cylindrical pins embedded in an anode matrix, inspired by an origami/pin-array patent.</p>
+              <p><strong>Final geometry parameters (as-built):</strong></p>
+              <ul>
+                <li><code>hex_R = 1.95 mm</code> — flat-top hexagonal outer envelope</li>
+                <li><code>H = 4.0 mm</code> — total cell height</li>
+                <li><code>d_pin = 0.30 mm</code> (300 µm) — cathode pin diameter (LFP)</li>
+                <li><code>t_sep = 0.025 mm</code> (25 µm) — separator shell thickness (Al₂O₃ ceramic)</li>
+                <li><code>t_w = 0.025 mm</code> (25 µm) — anode matrix wall between separator shells</li>
+                <li><strong>61 cathode pins</strong> in a <strong>4-ring HCP lattice</strong></li>
+              </ul>
+              <p>Built using brainstorming skill → design decisions → full Three.js implementation in a single <code>index.html</code>. Agent went from requirement clarification to shipped product in one session.</p>
+              <p><em>Full session available on request.</em></p>
+            </div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">Are people using your product?</div>
+            <div class="qa-answer">Yes</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">How many active users or customers do you have? How many are paying? Who is paying you the most, and how much do they pay you?</div>
+            <div class="qa-answer">Paying customers: 2. e-TRNL Energy and Arkle Energy, both on $500/seat/month contracts, activating with V1 launch.
+Signed LOIs: 2 more deeptech companies - Indi Energy and Onnes Cryogenics — currently co-defining their modules with us.
+Design partners: 3 researchers at Tier 1 universities.
+Pipeline: BPCL (one of India's largest oil company, ~$50B revenue) joined the waitlist after a live demo. Vetri Labs has a demo scheduled for US-market entry.</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">Do you have revenue?</div>
+            <div class="qa-answer">no</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">If you are applying with the same idea as a previous batch, did anything change? If you applied with a different idea, why did you pivot and what did you learn from the last idea?</div>
+            <div class="qa-answer">I'm applying with different idea. BlueDot Labs is the direct solution of the problem we faced daily at ProtonCraft for 1.5 years. We desperately needed AI simulation tools to pace up R&amp;D, so we started building it.
+
+At ProtonCraft, we built 8x better technology and reached the pre-pilot stage (TRL-6). However, our velocity was constantly bottlenecked by slow-moving customers (oil refineries) and heavy regulations.
+
+Our core learning: relying on legacy industries to validate your tech kills momentum. We pivoted to software so we can own the entire product cycle and move fast. Instead of selling to dinosaurs, we want to outpace them.</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">If you have already participated or committed to participate in an incubator, "accelerator" or "pre-accelerator" program, please tell us about it.</div>
+            <div class="qa-answer">No</div>
+          </div>
+        </div>
+
+        <!-- IDEA -->
+        <div id="f_idea" class="apply-section">
+          <div class="apply-section-header">Idea</div>
+
+          <div class="qa-block">
+            <div class="qa-question">Why did you pick this idea to work on? Do you have domain expertise in this area? How do you know people need what you're making?</div>
+            <div class="qa-answer">We want to build a faster research ecosystem where the focus is science, not labor. We picked this idea because we've lived it - watching researchers lose weeks wrestling with clunky simulation tools, writing boilerplate scripts, and stitching together workflows that should just work, and we saw this pattern repeat across labs, startups, and enterprises. And with current emerging AI models, we've observed it's possible to do now what wasn't possible even 6 months ago.
+
+Yes, we both have domain expertise in our field. I have lived the exact problem building ProtonCraft's electrocatalyst, and Kamal has scaled two startups as a founding AI engineer - he has also built simulations and has a keen interest in the space.
+
+Talking to customers like e-TRNL and Indi, we realised they not only need specific software licenses but also need a specialist whose only work is to translate science into software GUI.</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">Who are your competitors? What do you understand about your business that they don't?</div>
+            <div class="qa-answer">Incumbents like COMSOL, ASPEN, ANSYS, and SimScale are clusters of physics solvers wrapped in black boxes with decades-long update cycles. New AI-native players like Godela (YC), PhysicsX are interesting, but they operate in mostly mechanical engineering - energy R&amp;D requires domain-specific models for electrochemistry, thermal dynamics, and material science that these tools handle poorly.
+
+Incumbents are black boxes with GUI. Researchers can't see the physics, can't swap solvers, can't afford the licence. 80% of better open-source solvers sit unused because integration took weeks - until now.
+
+AI is finally good enough to orchestrate domain-specific simulations correctly. We're building at exactly that inflection point - modular, transparent, pay-per-use. Starting with energy R&amp;D where wrong answers cost years.</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">How do or will you make money? How much could you make?</div>
+            <div class="qa-question-subtitle">We realize you can't know precisely, but give your best estimate.</div>
+            <div class="qa-answer">6 potential B2B customers in connect at Bangalore who spends $150K–$300K/year on licenses plus simulation engineers. We replace that at $20K–$25K/year, estimated $147K ARR, 6 weeks to close post public launch.
+US launch 6 months: SF energy startups at 2–3× deal sizes, energy companies in Alabama and Texas.
+Month 9: $647K ARR, 13 customers, 3 geographies.
+
+There are 3,000 teams globally with identical budget profiles in energy R&amp;D alone that's a $927M ARR opportunity. And that's just 5% of the $20B simulation software market, growing at 10.4% annually to $36B by 2030.</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">Which category best applies to your company?</div>
+            <div class="qa-answer">B2B SaaS</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">If you had any other ideas you considered applying with, please list them. One may be something we've been waiting for. Often when we fund people it's to do something they list here and not in the main application.</div>
+            <div class="qa-answer">Our core belief: scientists should only do science.
+Physical AI to automate all manual labor in wet labs - starting with electrochemistry.
+AI-powered research lab that runs autonomously and does breakthrough science - a second Bell Labs, but limitless.</div>
+          </div>
+        </div>
+
+        <!-- EQUITY -->
+        <div id="f_equity" class="apply-section">
+          <div class="apply-section-header">Equity</div>
+
+          <div class="qa-block">
+            <div class="qa-question">Have you formed ANY legal entity yet?</div>
+            <div class="qa-question-subtitle">This may be in the US, in your home country, or in another country.</div>
+            <div class="qa-answer">no</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">If you have not formed the company yet, describe the planned equity ownership breakdown among the founders, employees and any other proposed stockholders. If there are multiple founders, be sure to give the proposed equity ownership of each founder and founder title (e.g. CEO). (This question is as much for you as us.)</div>
+            <div class="qa-answer">We've planned equal split as we both have complimentary roles crucial for company growth.
+Kunal - CEO, 50%
+Kamal - CTO, 50%</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">Have you taken any investment yet?</div>
+            <div class="qa-answer">no</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">Are you currently fundraising?</div>
+            <div class="qa-answer">no</div>
+          </div>
+        </div>
+
+        <!-- CURIOUS -->
+        <div id="f_curious" class="apply-section">
+          <div class="apply-section-header">Curious</div>
+
+          <div class="qa-block">
+            <div class="qa-question">What convinced you to apply to Y Combinator? Did someone encourage you to apply? Have you been to any YC events?</div>
+            <div class="qa-answer">RazorPay's founders are IIT Roorkee alumni - their story convinced us to apply.
+
+We attended YC startup school in Bengaluru and pitched to Jon Xu &amp; Ankit Gupta.</div>
+          </div>
+
+          <div class="qa-block">
+            <div class="qa-question">How did you hear about Y Combinator?</div>
+            <div class="qa-answer">college alumni</div>
+          </div>
+        </div>
+
+        <!-- BATCH PREFERENCE -->
+        <div id="f_batch" class="apply-section">
+          <div class="apply-section-header">Batch Preference</div>
+
+          <div class="qa-block">
+            <div class="qa-question">What batch do you want to apply for?</div>
+            <div class="qa-answer">current</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT SPACER (hidden on small screens) -->
+      <div class="hidden md:block"></div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="yc-footer">
+    <div class="yc-footer-inner">
+      <a href="https://www.ycombinator.com/about/">About</a>
+      <a href="https://www.ycombinator.com/people/">People</a>
+      <a href="https://www.ycombinator.com/blog/">Blog</a>
+      <a href="https://www.ycombinator.com/resources/">Resources</a>
+      <a href="https://www.ycombinator.com/legal/">Legal</a>
+      <a href="https://www.ycombinator.com/contact/">Contact</a>
+    </div>
+  </div>
+
+  <script>
+    // Sidebar nav active state on scroll
+    const sections = document.querySelectorAll('.apply-section');
+    const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+    function updateNav() {
+      let current = '';
+      sections.forEach(s => {
+        const top = s.offsetTop - 100;
+        if (window.scrollY >= top) current = s.id;
+      });
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+      });
+    }
+
+    window.addEventListener('scroll', updateNav);
+    updateNav();
+  </script>
 </body>
 </html>
