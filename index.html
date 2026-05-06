@@ -2,33 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta content="IE=edge;chrome=1" http-equiv="X-UA-Compatible">
-  <meta content="initial-scale=1, width=device-width, height=device-height" name="viewport">
-  <meta content="follow" name="robots">
+  <meta content="initial-scale=1, width=device-width" name="viewport">
   <meta content="website" property="og:type">
-  <meta content="en_US" property="og:locale">
   <meta content="BlueDot Labs — Application" property="og:title">
   <title>BlueDot Labs — Application</title>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bd-blue: #1a56db;
-      --bd-blue-light: #e8f0fe;
-      --text-primary: #16140f;
-      --text-secondary: #6b7280;
-      --text-link: #1a56db;
-      --bg-body: #f5f5f5;
+      --bd-indigo: #4338ca;
+      --bd-indigo-light: #eef2ff;
+      --bd-indigo-mid: #a5b4fc;
+      --bd-cyan: #06b6d4;
+      --text-primary: #0f172a;
+      --text-secondary: #64748b;
+      --text-link: #4338ca;
+      --bg-body: #f8fafc;
       --bg-white: #ffffff;
-      --bg-subtle: #f9fafb;
-      --border-light: #e5e7eb;
-      --border-med: #d1d5db;
-      --positive-bg: #16a34a;
+      --bg-subtle: #f1f5f9;
+      --bg-warm: #fefce8;
+      --border-light: #e2e8f0;
+      --border-med: #cbd5e1;
+      --positive-bg: #059669;
+      --positive-light: #d1fae5;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.05);
+      --radius: 12px;
+      --radius-sm: 8px;
     }
 
     html { scroll-behavior: smooth; }
@@ -42,11 +48,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    .serif-button-text {
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      font-size: 14px;
-    }
-
     a { color: var(--text-link); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
@@ -55,84 +56,83 @@
       width: 100%;
       background: var(--bg-white);
       border-bottom: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 50;
     }
     .app-header-inner {
       display: flex;
       align-items: center;
-      padding: 16px 24px;
+      padding: 12px 24px;
+      max-width: 1280px;
+      margin: 0 auto;
     }
     .app-logo {
       display: flex;
       align-items: center;
-      padding-left: 16px;
+      padding-left: 8px;
       text-decoration: none;
+      gap: 10px;
     }
     .app-logo:hover { text-decoration: none; }
     .app-logo-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      background: var(--bd-blue);
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--bd-indigo), var(--bd-cyan));
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       font-family: Georgia, serif;
     }
     .app-logo-text {
-      margin-left: 10px;
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text-primary);
     }
     .app-header-right {
       margin-left: auto;
       display: flex;
       align-items: center;
-      padding-right: 16px;
+      gap: 12px;
     }
     .app-header-right .username {
       font-size: 14px;
       font-weight: 500;
-      color: var(--text-primary);
-    }
-    .app-header-right .divider {
-      width: 1px;
-      height: 20px;
-      background: rgba(0,0,0,0.15);
-      margin: 0 16px 0 12px;
-    }
-    .app-header-right .settings-link {
       color: var(--text-secondary);
-      margin-left: 8px;
-      font-size: 18px;
-      line-height: 1;
+      background: var(--bg-subtle);
+      padding: 6px 14px;
+      border-radius: 20px;
     }
-    .app-header-right .settings-link:hover { color: var(--text-primary); text-decoration: none; }
 
     /* ===== PAGE TITLE ===== */
     .page-title-area {
       max-width: 640px;
       margin: 0 auto;
-      padding: 32px 16px 0;
+      padding: 40px 16px 0;
     }
     .back-link {
-      font-family: Georgia, 'Times New Roman', Times, serif;
       font-size: 14px;
-      color: var(--text-primary);
+      color: var(--text-secondary);
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      transition: background 0.2s;
     }
+    .back-link:hover { background: var(--bg-subtle); text-decoration: none; }
     .back-link .material-symbols-outlined { font-size: 16px; }
     .page-header {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 0;
+      font-size: 32px;
+      font-weight: 800;
       color: var(--text-primary);
+      letter-spacing: -0.5px;
     }
     .page-subheader {
       font-size: 18px;
@@ -141,215 +141,167 @@
       margin-top: 4px;
     }
 
-    /* ===== LAYOUT GRID ===== */
-    .apply-content {
-      max-width: 100%;
-      margin-top: 32px;
-    }
+    /* ===== LAYOUT ===== */
+    .apply-content { max-width: 100%; margin-top: 32px; }
     .apply-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 32px;
     }
     @media (min-width: 1280px) {
-      .apply-grid {
-        grid-template-columns: minmax(0,1fr) 640px minmax(0,1fr);
-      }
+      .apply-grid { grid-template-columns: minmax(0,1fr) 640px minmax(0,1fr); }
     }
 
-    /* ===== LEFT SIDEBAR NAV ===== */
+    /* ===== SIDEBAR ===== */
     .sidebar-nav { display: none; }
     @media (min-width: 1280px) {
-      .sidebar-nav { display: block; padding-right: 96px; }
-      .sidebar-nav-inner { position: sticky; top: 32px; }
+      .sidebar-nav { display: block; padding-right: 80px; }
+      .sidebar-nav-inner { position: sticky; top: 80px; }
     }
     .sidebar-nav a {
       display: block;
-      padding: 8px 16px;
-      font-size: 15px;
-      font-weight: 500;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 600;
       color: var(--text-primary);
-      border-radius: 6px;
-      transition: opacity 0.2s;
+      border-radius: var(--radius-sm);
+      transition: all 0.15s;
       text-decoration: none;
+      margin-bottom: 2px;
     }
-    .sidebar-nav a.active { opacity: 1; }
-    .sidebar-nav a:not(.active) { opacity: 0.4; }
-    .sidebar-nav a:not(.active):hover { opacity: 0.6; text-decoration: none; }
+    .sidebar-nav a.active { background: var(--bd-indigo-light); color: var(--bd-indigo); opacity: 1; }
+    .sidebar-nav a:not(.active) { opacity: 0.45; }
+    .sidebar-nav a:not(.active):hover { opacity: 0.7; text-decoration: none; background: var(--bg-subtle); }
 
-    /* ===== MAIN CONTENT ===== */
+    /* ===== MAIN ===== */
     .main-content { max-width: 640px; width: 100%; }
     @media (min-width: 1280px) { .main-content { max-width: none; } }
 
     /* ===== SECTIONS ===== */
-    .apply-section { margin-bottom: 64px; }
+    .apply-section { margin-bottom: 56px; }
     .apply-section-header {
       font-size: 20px;
       font-weight: 700;
       color: var(--text-primary);
-      margin-bottom: 32px;
+      margin-bottom: 28px;
       padding-bottom: 12px;
-      border-bottom: 2px solid var(--border-light);
-    }
-
-    /* ===== FOUNDER CARDS ===== */
-    .founder-cards { margin-bottom: 32px; display: flex; flex-direction: column; gap: 16px; }
-    .founder-card {
-      display: flex;
-      flex-direction: column;
-      border: 1px solid var(--text-primary);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .founder-card-top {
-      display: flex;
-      min-height: 72px;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 32px;
-      cursor: pointer;
-      user-select: none;
-    }
-    .founder-card-top:hover .founder-card-chevron {
-      background: var(--text-primary);
-      color: white;
-    }
-    .founder-card-name {
-      font-size: 18px;
-      font-weight: 500;
-      margin-right: 10px;
-    }
-    .founder-card-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      white-space: nowrap;
-      border-radius: 9999px;
-      padding: 4px 16px;
-      font-size: 13px;
-      font-weight: 500;
-      background: var(--positive-bg);
-      color: white;
-    }
-    .founder-card-badge .material-symbols-outlined { font-size: 16px; }
-    .founder-card-chevron {
-      border-radius: 9999px;
-      padding: 8px;
-      transition: transform 0.25s ease, background 0.2s, color 0.2s;
-      color: var(--text-secondary);
-    }
-    .founder-card.open .founder-card-chevron {
-      transform: rotate(180deg);
-    }
-    .founder-card-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease;
-    }
-    .founder-card.open .founder-card-body {
-      max-height: 2000px;
-    }
-    .founder-card-detail {
-      padding: 0 32px 24px;
-      border-top: 1px solid var(--border-light);
-      padding-top: 20px;
-    }
-    .founder-detail-section {
-      margin-bottom: 24px;
-    }
-    .founder-detail-section:last-child { margin-bottom: 0; }
-    .founder-detail-section-title {
-      font-size: 20px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      margin-bottom: 20px;
-    }
-    .founder-detail-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      margin-bottom: 20px;
-    }
-    .founder-detail-item {}
-    .founder-detail-label {
-      font-size: 16px;
-      font-weight: 500;
-      margin-bottom: 16px;
-    }
-    .founder-detail-value {
-      font-size: 16px;
-      white-space: pre-line;
-    }
-    .founder-detail-value a {
-      color: var(--text-link);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-    .founder-edu-entry, .founder-work-entry {
-      margin-bottom: 16px;
-    }
-    .founder-edu-entry:last-child, .founder-work-entry:last-child { margin-bottom: 0; }
-    .founder-entry-header {
+      border-bottom: 2px solid var(--bd-indigo-mid);
       display: flex;
       align-items: center;
       gap: 8px;
-      font-weight: 500;
-      flex-wrap: wrap;
     }
-    .founder-entry-date {
-      font-size: 15px;
-      white-space: nowrap;
-    }
-    .founder-entry-sub {
-      margin-top: 2px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 4px;
-      font-size: 15px;
-      color: var(--text-secondary);
-    }
-    .founder-entry-desc {
-      margin-top: 4px;
-      font-size: 15px;
-      color: #555;
-      max-width: 70%;
-      line-height: 1.6;
+    .apply-section-header::before {
+      content: '';
+      width: 4px;
+      height: 24px;
+      background: linear-gradient(180deg, var(--bd-indigo), var(--bd-cyan));
+      border-radius: 2px;
     }
 
-    /* ===== Q&A BLOCKS ===== */
-    .qa-block { margin-bottom: 48px; }
+    /* ===== FOUNDER CARDS ===== */
+    .founder-cards { margin-bottom: 32px; display: flex; flex-direction: column; gap: 12px; }
+    .founder-card {
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg-white);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s;
+    }
+    .founder-card:hover { box-shadow: var(--shadow-md); }
+    .founder-card-top {
+      display: flex;
+      min-height: 64px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s;
+    }
+    .founder-card-top:hover { background: var(--bd-indigo-light); }
+    .founder-card-name { font-size: 17px; font-weight: 600; margin-right: 10px; }
+    .founder-card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--positive-light);
+      color: var(--positive-bg);
+    }
+    .founder-card-badge .material-symbols-outlined { font-size: 14px; }
+    .founder-card-chevron {
+      border-radius: 20px;
+      padding: 6px;
+      transition: transform 0.25s ease, background 0.15s, color 0.15s;
+      color: var(--text-secondary);
+      font-size: 20px;
+    }
+    .founder-card.open .founder-card-chevron { transform: rotate(180deg); color: var(--bd-indigo); }
+    .founder-card-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .founder-card.open .founder-card-body { max-height: 3000px; }
+    .founder-card-detail { padding: 0 24px 24px; border-top: 1px solid var(--border-light); }
+    .fd-section { margin-bottom: 24px; }
+    .fd-section:last-child { margin-bottom: 0; }
+    .fd-section-title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 20px 0 16px;
+      color: var(--bd-indigo);
+    }
+    .fd-row { display: flex; flex-wrap: wrap; gap: 32px; margin-bottom: 16px; }
+    .fd-label { font-size: 14px; font-weight: 600; color: var(--text-secondary); margin-bottom: 4px; }
+    .fd-value { font-size: 15px; white-space: pre-line; color: var(--text-primary); }
+    .fd-value a { color: var(--text-link); text-decoration: underline; text-underline-offset: 2px; }
+    .fd-entry { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border-light); }
+    .fd-entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .fd-entry-head { display: flex; align-items: center; gap: 6px; font-weight: 600; flex-wrap: wrap; font-size: 15px; }
+    .fd-entry-date { font-size: 13px; color: var(--text-secondary); font-weight: 400; margin-top: 2px; }
+    .fd-entry-sub { font-size: 14px; color: var(--text-secondary); margin-top: 2px; }
+    .fd-entry-desc { font-size: 14px; color: var(--text-secondary); margin-top: 6px; line-height: 1.65; max-width: 85%; }
+
+    /* ===== Q&A ===== */
+    .qa-block { margin-bottom: 40px; }
     .qa-block:last-child { margin-bottom: 0; }
     .qa-question {
-      font-size: 16px;
-      font-weight: 500;
+      font-size: 15px;
+      font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 16px;
+      margin-bottom: 12px;
+      padding: 10px 14px;
+      background: var(--bg-subtle);
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--bd-indigo-mid);
     }
     .qa-question-subtitle {
-      font-size: 14px;
-      font-weight: 400;
+      font-size: 13px;
       color: var(--text-secondary);
       margin-top: 4px;
+      padding: 0 14px;
+      font-weight: 400;
     }
     .qa-answer {
       white-space: pre-line;
-      font-size: 16px;
+      font-size: 15px;
       color: var(--text-primary);
-      line-height: 1.7;
+      line-height: 1.75;
+      padding: 4px 14px;
     }
-    .qa-answer a {
-      color: var(--text-link);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
+    .qa-answer a { color: var(--text-link); text-decoration: underline; text-underline-offset: 2px; }
 
-    /* ===== VIDEO PLAYER ===== */
+    /* ===== VIDEO ===== */
     .video-preview {
       width: 100%;
-      border-radius: 8px;
+      border-radius: var(--radius);
       overflow: hidden;
       background: #000;
+      box-shadow: var(--shadow-md);
+      margin: 8px 0;
     }
     .video-preview video { width: 100%; display: block; }
 
@@ -357,25 +309,25 @@
     .coding-session-block {
       max-height: 400px;
       overflow: auto;
-      border-radius: 8px;
+      border-radius: var(--radius);
       border: 1px solid var(--border-light);
       background: var(--bg-white);
       padding: 16px;
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1.6;
+      box-shadow: var(--shadow-sm);
     }
-    .coding-session-block h1 { font-size: 18px; margin-bottom: 8px; }
-    .coding-session-block h2 { font-size: 16px; margin-top: 16px; margin-bottom: 4px; font-weight: 600; }
-    .coding-session-block h3 { font-size: 15px; margin-top: 12px; font-weight: 600; }
+    .coding-session-block h1 { font-size: 17px; margin-bottom: 8px; }
+    .coding-session-block h2 { font-size: 15px; margin-top: 16px; margin-bottom: 4px; font-weight: 600; }
+    .coding-session-block h3 { font-size: 14px; margin-top: 12px; font-weight: 600; }
     .coding-session-block p { margin-bottom: 8px; }
     .coding-session-block ul, .coding-session-block ol { padding-left: 20px; margin-bottom: 8px; }
     .coding-session-block li { margin-bottom: 4px; }
-    .coding-session-block code { background: var(--bg-subtle); padding: 1px 4px; border-radius: 3px; font-size: 13px; }
-    .coding-session-block pre { background: var(--bg-subtle); padding: 12px; border-radius: 6px; overflow-x: auto; margin-bottom: 8px; }
-    .coding-session-block pre code { background: none; padding: 0; }
+    .coding-session-block code { background: var(--bg-subtle); padding: 1px 4px; border-radius: 3px; font-size: 12px; }
+    .coding-session-block pre { background: var(--bg-subtle); padding: 10px; border-radius: 6px; overflow-x: auto; margin-bottom: 8px; }
     .coding-session-block hr { border: none; border-top: 1px solid var(--border-light); margin: 16px 0; }
     .coding-session-block table { width: 100%; border-collapse: collapse; margin-bottom: 8px; }
-    .coding-session-block th, .coding-session-block td { border: 1px solid var(--border-light); padding: 6px 10px; font-size: 13px; text-align: left; }
+    .coding-session-block th, .coding-session-block td { border: 1px solid var(--border-light); padding: 5px 8px; font-size: 12px; text-align: left; }
     .coding-session-block th { background: var(--bg-subtle); font-weight: 600; }
 
     /* ===== FOOTER ===== */
@@ -384,7 +336,7 @@
       width: 100%;
       align-items: center;
       justify-content: center;
-      padding: 16px 24px;
+      padding: 20px 24px;
       border-top: 1px solid var(--border-light);
       background: var(--bg-white);
       margin-top: 48px;
@@ -398,29 +350,30 @@
     }
     .app-footer a {
       font-size: 14px;
-      color: var(--text-primary);
-      text-decoration: underline;
-      text-decoration-color: var(--text-secondary);
-      text-underline-offset: 2px;
-      transition: all 0.2s;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      transition: all 0.15s;
     }
-    .app-footer a:hover { text-decoration-color: var(--text-primary); }
+    .app-footer a:hover { color: var(--bd-indigo); background: var(--bd-indigo-light); text-decoration: none; }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 640px) {
       .page-title-area { padding: 24px 12px 0; }
-      .page-header { font-size: 22px; }
+      .page-header { font-size: 24px; }
       .page-subheader { font-size: 16px; }
-      .apply-section { margin-bottom: 48px; }
-      .qa-block { margin-bottom: 36px; }
-      .founder-card-top { padding: 16px 20px; }
-      .founder-card-detail { padding: 0 20px 20px; }
+      .apply-section { margin-bottom: 40px; }
+      .qa-block { margin-bottom: 28px; }
+      .founder-card-top { padding: 14px 16px; }
+      .founder-card-detail { padding: 0 16px 16px; }
+      .fd-entry-desc { max-width: 100%; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <div class="app-header">
     <div class="app-header-inner">
       <a href="https://bluedotlabs.org/" class="app-logo">
@@ -429,15 +382,10 @@
       </a>
       <div class="app-header-right">
         <span class="username">kunalshaw79</span>
-        <div class="divider"></div>
-        <a href="https://github.com/kunalshaw79" class="settings-link" title="GitHub" target="_blank">
-          <span class="material-icons-outlined" style="font-size:18px">settings</span>
-        </a>
       </div>
     </div>
   </div>
 
-  <!-- PAGE TITLE -->
   <div class="page-title-area">
     <a href="https://bluedotlabs.org/" class="back-link">
       <span class="material-symbols-outlined">chevron_left</span> Back
@@ -448,11 +396,9 @@
     </div>
   </div>
 
-  <!-- MAIN LAYOUT -->
   <div class="apply-content">
     <div class="apply-grid">
 
-      <!-- LEFT SIDEBAR -->
       <nav class="sidebar-nav">
         <div class="sidebar-nav-inner">
           <a href="#f_founders" class="active">Founders</a>
@@ -464,410 +410,195 @@
         </div>
       </nav>
 
-      <!-- MAIN CONTENT -->
       <div class="main-content">
 
-        <!-- FOUNDERS -->
         <div id="f_founders" class="apply-section">
           <div class="apply-section-header">Founders</div>
 
           <div class="founder-cards">
-            <!-- KUNAL -->
-            <div class="founder-card open" data-founder="kunal">
+            <div class="founder-card" data-founder="kunal">
               <div class="founder-card-top" onclick="toggleFounder(this)">
                 <div style="display:flex;align-items:center">
                   <span class="founder-card-name">Kunal Shaw</span>
-                  <span class="founder-card-badge">
-                    <span class="material-symbols-outlined">check_circle</span> Profile complete
-                  </span>
+                  <span class="founder-card-badge"><span class="material-symbols-outlined">check_circle</span> Profile complete</span>
                 </div>
                 <span class="material-icons-outlined founder-card-chevron">keyboard_arrow_down</span>
               </div>
               <div class="founder-card-body">
                 <div class="founder-card-detail">
-                  <div class="founder-detail-section">
-                    <div class="founder-detail-section-title">Basics</div>
-                    <div class="founder-detail-row">
-                      <div class="founder-detail-item"><div class="founder-detail-label">Name</div><div class="founder-detail-value">Kunal Shaw</div></div>
-                      <div class="founder-detail-item"><div class="founder-detail-label">Email</div><div class="founder-detail-value">shawkunal032@gmail.com</div></div>
-                      <div class="founder-detail-item"><div class="founder-detail-label">Phone</div><div class="founder-detail-value">+919432810879</div></div>
+                  <div class="fd-section"><div class="fd-section-title">Basics</div>
+                    <div class="fd-row">
+                      <div><div class="fd-label">Name</div><div class="fd-value">Kunal Shaw</div></div>
+                      <div><div class="fd-label">Email</div><div class="fd-value">shawkunal032@gmail.com</div></div>
+                      <div><div class="fd-label">Phone</div><div class="fd-value">+919432810879</div></div>
                     </div>
-                    <div class="founder-detail-row">
-                      <div class="founder-detail-item"><div class="founder-detail-label">Age</div><div class="founder-detail-value">22</div></div>
-                      <div class="founder-detail-item"><div class="founder-detail-label">Gender</div><div class="founder-detail-value">Male</div></div>
-                      <div class="founder-detail-item"><div class="founder-detail-label">City</div><div class="founder-detail-value">Bengaluru, Karnataka, IN</div></div>
+                    <div class="fd-row">
+                      <div><div class="fd-label">Age</div><div class="fd-value">22</div></div>
+                      <div><div class="fd-label">Gender</div><div class="fd-value">Male</div></div>
+                      <div><div class="fd-label">City</div><div class="fd-value">Bengaluru, IN</div></div>
                     </div>
                   </div>
-                  <div class="founder-detail-section">
-                    <div class="founder-detail-section-title">Role</div>
-                    <div class="founder-detail-item" style="margin-bottom:16px"><div class="founder-detail-label">Title</div><div class="founder-detail-value">CEO</div></div>
-                    <div class="founder-detail-item" style="margin-bottom:16px"><div class="founder-detail-label">Equity</div><div class="founder-detail-value">50%</div></div>
-                    <div class="founder-detail-item" style="margin-bottom:16px"><div class="founder-detail-label">Technical founder?</div><div class="founder-detail-value">Yes</div></div>
-                    <div class="founder-detail-item"><div class="founder-detail-label">Commit full-time?</div><div class="founder-detail-value">Yes</div></div>
+                  <div class="fd-section"><div class="fd-section-title">Role</div>
+                    <div class="fd-row"><div><div class="fd-label">Title</div><div class="fd-value">CEO</div></div><div><div class="fd-label">Equity</div><div class="fd-value">50%</div></div><div><div class="fd-label">Technical</div><div class="fd-value">Yes</div></div><div><div class="fd-label">Full-time</div><div class="fd-value">Yes</div></div></div>
                   </div>
-                  <div class="founder-detail-section">
-                    <div class="founder-detail-section-title">Background</div>
-                    <div class="founder-detail-item" style="margin-bottom:16px"><div class="founder-detail-label">LinkedIn</div><div class="founder-detail-value"><a href="https://www.linkedin.com/in/shawkunal031/" target="_blank">linkedin.com/in/shawkunal031</a></div></div>
-                    <div class="founder-detail-item" style="margin-bottom:24px"><div class="founder-detail-label">GitHub</div><div class="founder-detail-value"><a href="https://github.com/kunalshaw79" target="_blank">github.com/kunalshaw79</a></div></div>
-                    <div class="founder-detail-section-title" style="margin-top:20px">Education</div>
-                    <div class="founder-edu-entry">
-                      <div class="founder-entry-header"><span>IIT Roorkee</span></div>
-                      <div class="founder-entry-date" style="color:var(--text-secondary);font-size:14px">Nov 2021 - Jun 2025</div>
-                      <div class="founder-entry-sub"><span>B.Tech,</span><span>Engineering Physics</span></div>
-                    </div>
-                    <div class="founder-edu-entry">
-                      <div class="founder-entry-header"><span>Shree Jain Vidyalaya</span></div>
-                      <div class="founder-entry-date" style="color:var(--text-secondary);font-size:14px">Jan 2019 - Jan 2021</div>
-                      <div class="founder-entry-sub"><span>Higher Secondary,</span><span>Physics, Chemistry &amp; Mathematics</span></div>
-                    </div>
-                    <div class="founder-detail-section-title" style="margin-top:20px">Work Experience</div>
-                    <div class="founder-work-entry">
-                      <div class="founder-entry-header"><span>ProtonCraft</span><span>-</span><span>Founder / CEO</span></div>
-                      <div class="founder-entry-date" style="color:var(--text-secondary);font-size:14px">Jun 2024 - Present</div>
-                      <div class="founder-entry-desc">Led ProtonCraft from lab concept to TRL-6, pilot-ready prototype producing green hydrogen from refinery H₂S waste at 75% lower energy than conventional routes. Our electrocatalyst outperforms the global benchmark by 8X. Filed 3 IPs. Closed LOIs with BPCL and IOCL.</div>
-                    </div>
-                    <div class="founder-work-entry">
-                      <div class="founder-entry-header"><span>Energy Storage Lab, IIT Roorkee</span><span>-</span><span>Research Associate</span></div>
-                      <div class="founder-entry-date" style="color:var(--text-secondary);font-size:14px">Feb 2023 - Mar 2025</div>
-                      <div class="founder-entry-desc">Built a deep learning-based BMS for sodium-ion batteries using proprietary experimental data. Youngest researcher on the team working toward India's first MW-scale sodium-ion plant. This is the direct origin of BlueDotLabs.</div>
-                    </div>
-                    <div class="founder-work-entry">
-                      <div class="founder-entry-header"><span>IPR Cell IIT Roorkee</span><span>-</span><span>Project Lead</span></div>
-                      <div class="founder-entry-date" style="color:var(--text-secondary);font-size:14px">Sep 2023 - Feb 2024</div>
-                      <div class="founder-entry-desc">Led a team of designers and engineers to ship an internal IP management platform for IIT Roorkee.</div>
-                    </div>
-                    <div class="founder-detail-section-title" style="margin-top:20px">Accomplishments</div>
-                    <div class="founder-detail-item" style="margin-bottom:16px"><div class="founder-detail-label">Hack story</div><div class="founder-detail-value">I legally hacked Indian Banks. Took an education loan to cover all expenses, then received a merit scholarship as reimbursement. Invested in curated stocks, covered cost of my initial startup and recovered with 100% profit.</div></div>
-                    <div class="founder-detail-item" style="margin-bottom:16px"><div class="founder-detail-label">Most impressive achievement</div><div class="founder-detail-value">Built an electrocatalyst that achieved 8X better performance than published literature (200mA/cm² @ 534 hrs vs. industry standard 25mA/cm²), validated through independent testing. Every professor said it would take at least two years.</div></div>
-                    <div class="founder-detail-item" style="margin-bottom:16px"><div class="founder-detail-label">Projects built</div><div class="founder-detail-value">Multiscale simulation for catalyst synthesis — starts from DFT energies, integrates into kinetics, and predicts what composition you'll get from electrodeposition.
-
-Camera-based data acquisition for physical experiments — updates 24/7 on Telegram, maintains logs, flags anomalies. Used daily at ProtonCraft.
-
-AlgoEase (Pre-AI era) — built a full pipeline to execute trading strategies on live Binance APIs, running simultaneously on 36 coins using parallel threading.</div></div>
-                    <div class="founder-detail-item" style="margin-bottom:16px"><div class="founder-detail-label">Awards</div><div class="founder-detail-value">- Hult Prize Top 6 Global Finalist (Top 0.03%) — selected from 20,000+ startups across 130+ countries
-- Singhal Tech Society Award — Best overall technical project among 2,614 IIT graduates
-- Winner, Together 5.0 — Indo-Canadian Tech Startup Competition, selected from 200,000+ applicants</div></div>
-                    <div class="founder-detail-item"><div class="founder-detail-label">Test scores</div><div class="founder-detail-value">- JEE: 99% percentile out of 1.2M+ candidates (Top 1%)
-- All India Rank 541 in WBJEE out of 150K+ candidates
-- IMO Regional Rank 52</div></div>
+                  <div class="fd-section"><div class="fd-section-title">Background</div>
+                    <div class="fd-row"><div><div class="fd-label">LinkedIn</div><div class="fd-value"><a href="https://www.linkedin.com/in/shawkunal031/" target="_blank">shawkunal031</a></div></div><div><div class="fd-label">GitHub</div><div class="fd-value"><a href="https://github.com/kunalshaw79" target="_blank">kunalshaw79</a></div></div></div>
+                    <div class="fd-section-title">Education</div>
+                    <div class="fd-entry"><div class="fd-entry-head">IIT Roorkee</div><div class="fd-entry-date">Nov 2021 - Jun 2025</div><div class="fd-entry-sub">B.Tech, Engineering Physics</div></div>
+                    <div class="fd-entry"><div class="fd-entry-head">Shree Jain Vidyalaya</div><div class="fd-entry-date">Jan 2019 - Jan 2021</div><div class="fd-entry-sub">Higher Secondary, PCM</div></div>
+                    <div class="fd-section-title">Work Experience</div>
+                    <div class="fd-entry"><div class="fd-entry-head">ProtonCraft — Founder / CEO</div><div class="fd-entry-date">Jun 2024 - Present</div><div class="fd-entry-desc">Led from lab concept to TRL-6. Electro-catalyst 8X better than global benchmark. Filed 3 IPs. LOIs with BPCL &amp; IOCL.</div></div>
+                    <div class="fd-entry"><div class="fd-entry-head">Energy Storage Lab, IIT Roorkee — Research Associate</div><div class="fd-entry-date">Feb 2023 - Mar 2025</div><div class="fd-entry-desc">Deep learning BMS for sodium-ion batteries. Youngest researcher on MW-scale plant team. Origin of BlueDotLabs.</div></div>
+                    <div class="fd-entry"><div class="fd-entry-head">IPR Cell IIT Roorkee — Project Lead</div><div class="fd-entry-date">Sep 2023 - Feb 2024</div><div class="fd-entry-desc">Led team to ship internal IP management platform.</div></div>
+                    <div class="fd-section-title">Accomplishments</div>
+                    <div class="fd-entry"><div class="fd-label">Hack story</div><div class="fd-value">Legally hacked Indian banks — took education loan, got merit reimbursement, invested in stocks, covered startup costs, recovered 100% profit.</div></div>
+                    <div class="fd-entry"><div class="fd-label">Most impressive</div><div class="fd-value">Electrocatalyst at 8X published literature (200mA/cm² @ 534 hrs vs 25mA/cm²). Professors said 2 years minimum. Did it in 3 months.</div></div>
+                    <div class="fd-entry"><div class="fd-label">Projects</div><div class="fd-value">Multiscale catalyst simulation (DFT → kinetics → electrodeposition prediction). Camera-based 24/7 lab monitoring with Telegram alerts. AlgoEase: live Binance trading on 36 coins.</div></div>
+                    <div class="fd-entry"><div class="fd-label">Awards</div><div class="fd-value">Hult Prize Top 6 Global (0.03%). Singhal Tech Society Award. Winner Together 5.0 Indo-Canadian Competition.</div></div>
+                    <div class="fd-entry"><div class="fd-label">Scores</div><div class="fd-value">JEE 99%ile (Top 1% of 1.2M). AIR 541 WBJEE. IMO Regional Rank 52.</div></div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- KAMAL -->
             <div class="founder-card" data-founder="kamal">
               <div class="founder-card-top" onclick="toggleFounder(this)">
                 <div style="display:flex;align-items:center">
                   <span class="founder-card-name">Kamal Utla</span>
-                  <span class="founder-card-badge">
-                    <span class="material-symbols-outlined">check_circle</span> Profile complete
-                  </span>
+                  <span class="founder-card-badge"><span class="material-symbols-outlined">check_circle</span> Profile complete</span>
                 </div>
                 <span class="material-icons-outlined founder-card-chevron">keyboard_arrow_down</span>
               </div>
               <div class="founder-card-body">
                 <div class="founder-card-detail">
-                  <div class="founder-detail-section">
-                    <div class="founder-detail-section-title">Basics</div>
-                    <div class="founder-detail-row">
-                      <div class="founder-detail-item"><div class="founder-detail-label">Name</div><div class="founder-detail-value">Kamal Utla</div></div>
-                      <div class="founder-detail-item"><div class="founder-detail-label">Email</div><div class="founder-detail-value">kamalutla@gmail.com</div></div>
-                      <div class="founder-detail-item"><div class="founder-detail-label">Phone</div><div class="founder-detail-value">+918179298095</div></div>
+                  <div class="fd-section"><div class="fd-section-title">Basics</div>
+                    <div class="fd-row">
+                      <div><div class="fd-label">Name</div><div class="fd-value">Kamal Utla</div></div>
+                      <div><div class="fd-label">Email</div><div class="fd-value">kamalutla@gmail.com</div></div>
+                      <div><div class="fd-label">Phone</div><div class="fd-value">+918179298095</div></div>
                     </div>
-                    <div class="founder-detail-row">
-                      <div class="founder-detail-item"><div class="founder-detail-label">Age</div><div class="founder-detail-value">23</div></div>
-                      <div class="founder-detail-item"><div class="founder-detail-label">Gender</div><div class="founder-detail-value">Male</div></div>
-                      <div class="founder-detail-item"><div class="founder-detail-label">City</div><div class="founder-detail-value">Bengaluru, Karnataka, IN</div></div>
+                    <div class="fd-row">
+                      <div><div class="fd-label">Age</div><div class="fd-value">23</div></div>
+                      <div><div class="fd-label">Gender</div><div class="fd-value">Male</div></div>
+                      <div><div class="fd-label">City</div><div class="fd-value">Bengaluru, IN</div></div>
                     </div>
                   </div>
-                  <div class="founder-detail-section">
-                    <div class="founder-detail-section-title">Role</div>
-                    <div class="founder-detail-item" style="margin-bottom:16px"><div class="founder-detail-label">Title</div><div class="founder-detail-value">CTO</div></div>
-                    <div class="founder-detail-item" style="margin-bottom:16px"><div class="founder-detail-label">Equity</div><div class="founder-detail-value">50%</div></div>
-                    <div class="founder-detail-item" style="margin-bottom:16px"><div class="founder-detail-label">Technical founder?</div><div class="founder-detail-value">Yes</div></div>
-                    <div class="founder-detail-item"><div class="founder-detail-label">Commit full-time?</div><div class="founder-detail-value">Yes (joins June 4th)</div></div>
+                  <div class="fd-section"><div class="fd-section-title">Role</div>
+                    <div class="fd-row"><div><div class="fd-label">Title</div><div class="fd-value">CTO</div></div><div><div class="fd-label">Equity</div><div class="fd-value">50%</div></div><div><div class="fd-label">Technical</div><div class="fd-value">Yes</div></div><div><div class="fd-label">Full-time</div><div class="fd-value">Jun 4</div></div></div>
                   </div>
-                  <div class="founder-detail-section">
-                    <div class="founder-detail-section-title">Background</div>
-                    <div class="founder-detail-item" style="margin-bottom:16px"><div class="founder-detail-label">LinkedIn</div><div class="founder-detail-value"><a href="https://www.linkedin.com/in/kamal-utla/" target="_blank">linkedin.com/in/kamal-utla</a></div></div>
-                    <div class="founder-detail-item" style="margin-bottom:16px"><div class="founder-detail-label">GitHub</div><div class="founder-detail-value"><a href="https://github.com/kamal20122012" target="_blank">github.com/kamal20122012</a></div></div>
-                    <div class="founder-detail-item" style="margin-bottom:24px"><div class="founder-detail-label">Website</div><div class="founder-detail-value"><a href="https://kamal20122012.github.io/" target="_blank">kamal20122012.github.io</a></div></div>
-                    <div class="founder-detail-section-title" style="margin-top:20px">Education</div>
-                    <div class="founder-edu-entry">
-                      <div class="founder-entry-header"><span>IIT Roorkee</span></div>
-                      <div class="founder-entry-date" style="color:var(--text-secondary);font-size:14px">Nov 2020 - May 2024</div>
-                      <div class="founder-entry-sub"><span>B.Tech,</span><span>Engineering Physics</span></div>
-                    </div>
-                    <div class="founder-detail-section-title" style="margin-top:20px">Work Experience</div>
-                    <div class="founder-work-entry">
-                      <div class="founder-entry-header"><span>BorderPlus</span><span>-</span><span>Founding AI Engineer</span></div>
-                      <div class="founder-entry-date" style="color:var(--text-secondary);font-size:14px">Nov 2025 - Present</div>
-                      <div class="founder-entry-desc">First AI hire. Built the company's entire AI stack from scratch — prompt infrastructure, RAG systems, knowledge base, agentic workflows. Designed and shipped the knowledge platform powering the core product.</div>
-                    </div>
-                    <div class="founder-work-entry">
-                      <div class="founder-entry-header"><span>Convai</span><span>-</span><span>Data Scientist — Applied Research</span></div>
-                      <div class="founder-entry-date" style="color:var(--text-secondary);font-size:14px">Jun 2024 - Oct 2025</div>
-                      <div class="founder-entry-desc">Owned the company's entire LLM and NLP stack. Supported the team to scale to $3M ARR. Built novel hybrid semantic + BM25 chunking that cut RAG latency by 27% and reduced memory 3-4x.</div>
-                    </div>
-                    <div class="founder-work-entry">
-                      <div class="founder-entry-header"><span>McMaster University</span><span>-</span><span>MITACS Globalink Research Intern</span></div>
-                      <div class="founder-entry-date" style="color:var(--text-secondary);font-size:14px">May 2023 - Aug 2023</div>
-                      <div class="founder-entry-desc">Built non-linear optimization models in Python to determine optimal EV battery recycling center locations across the Greater Toronto Area.</div>
-                    </div>
-                    <div class="founder-detail-section-title" style="margin-top:20px">Accomplishments</div>
-                    <div class="founder-detail-item" style="margin-bottom:16px"><div class="founder-detail-label">Hack story</div><div class="founder-detail-value">In a national quantum computing hackathon, most teams treated it like a PhD defense. I suspected the judging system rewarded "most understandable + working" not "most complex." We built a simple "quantum music generator" — not the deepest project, but one you could see, hear, and understand in 30 seconds. We won.</div></div>
-                    <div class="founder-detail-item" style="margin-bottom:16px"><div class="founder-detail-label">Most impressive achievement</div><div class="founder-detail-value">Faced with a failing RAG system at Unilever, I redesigned chunking and hybrid retrieval — reducing memory 3-4x and latency by 27% — and validated it on a 350M+ vector pipeline I built alone.</div></div>
-                    <div class="founder-detail-item" style="margin-bottom:16px"><div class="founder-detail-label">Awards</div><div class="founder-detail-value">- MITACS Globalink Research Fellowship (Canada)
-- Winner, IBM Qiskit Fall Fest 2021 — National Quantum Computing Hackathon
-- IIT R Encore Award 2023 — All-round excellence among 1200 students
-- Runner-up, Startbucks — National startup pitching at IIT BHU</div></div>
-                    <div class="founder-detail-item"><div class="founder-detail-label">Test scores</div><div class="founder-detail-value">- Top 10% in JEE Advanced
-- Top 5 in department at IIT Roorkee</div></div>
+                  <div class="fd-section"><div class="fd-section-title">Background</div>
+                    <div class="fd-row"><div><div class="fd-label">LinkedIn</div><div class="fd-value"><a href="https://www.linkedin.com/in/kamal-utla/" target="_blank">kamal-utla</a></div></div><div><div class="fd-label">GitHub</div><div class="fd-value"><a href="https://github.com/kamal20122012" target="_blank">kamal20122012</a></div></div><div><div class="fd-label">Website</div><div class="fd-value"><a href="https://kamal20122012.github.io/" target="_blank">kamal20122012.github.io</a></div></div></div>
+                    <div class="fd-section-title">Education</div>
+                    <div class="fd-entry"><div class="fd-entry-head">IIT Roorkee</div><div class="fd-entry-date">Nov 2020 - May 2024</div><div class="fd-entry-sub">B.Tech, Engineering Physics</div></div>
+                    <div class="fd-section-title">Work Experience</div>
+                    <div class="fd-entry"><div class="fd-entry-head">BorderPlus — Founding AI Engineer</div><div class="fd-entry-date">Nov 2025 - Present</div><div class="fd-entry-desc">First AI hire. Built entire AI stack: prompt infra, RAG, knowledge base, agentic workflows. Shipped core knowledge platform.</div></div>
+                    <div class="fd-entry"><div class="fd-entry-head">Convai — Data Scientist, Applied Research</div><div class="fd-entry-date">Jun 2024 - Oct 2025</div><div class="fd-entry-desc">Owned entire LLM/NLP stack. Scaled to $3M ARR. Novel hybrid chunking cut RAG latency 27%, memory 3-4X.</div></div>
+                    <div class="fd-entry"><div class="fd-entry-head">McMaster University — MITACS Globalink Intern</div><div class="fd-entry-date">May 2023 - Aug 2023</div><div class="fd-entry-desc">Non-linear optimization for EV battery recycling center locations across Greater Toronto Area.</div></div>
+                    <div class="fd-section-title">Accomplishments</div>
+                    <div class="fd-entry"><div class="fd-label">Hack story</div><div class="fd-value">Quantum hackathon: optimized for "understandable + working" not "most complex". Built a quantum music generator — won.</div></div>
+                    <div class="fd-entry"><div class="fd-label">Most impressive</div><div class="fd-value">Redesigned failing RAG at Unilever — cut memory 3-4X, latency 27% — validated on 350M+ vector pipeline built solo.</div></div>
+                    <div class="fd-entry"><div class="fd-label">Awards</div><div class="fd-value">MITACS Globalink Fellowship. Winner IBM Qiskit Fall Fest 2021. IIT R Encore Award 2023. Runner-up Startbucks IIT BHU.</div></div>
+                    <div class="fd-entry"><div class="fd-label">Scores</div><div class="fd-value">Top 10% JEE Advanced. Top 5 in department at IIT Roorkee.</div></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="qa-block">
-            <div class="qa-question">How long have the founders known one another and how did you meet? Have any of the founders not met in person?</div>
-            <div class="qa-answer">At Engineering Physics at IIT Roorkee, we've known each other for five years and spent our final year working together on building an intelligent Battery Management System (BMS) in the ESL lab which worked for sodium ion cells.</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">Who writes code, or does other technical work on your product? Was any of it done by a non-founder? Please explain.</div>
-            <div class="qa-answer">Kamal writes the code and Kunal make scientific modules which agent uses to orchestrate simulations.</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">Are you looking for a cofounder?</div>
-            <div class="qa-answer">No</div>
-          </div>
+          <div class="qa-block"><div class="qa-question">How long have the founders known one another and how did you meet?</div><div class="qa-answer">At Engineering Physics at IIT Roorkee, we've known each other for five years and spent our final year working together on building an intelligent Battery Management System (BMS) in the ESL lab which worked for sodium ion cells.</div></div>
+          <div class="qa-block"><div class="qa-question">Who writes code, or does other technical work on your product?</div><div class="qa-answer">Kamal writes the code and Kunal make scientific modules which agent uses to orchestrate simulations.</div></div>
+          <div class="qa-block"><div class="qa-question">Are you looking for a cofounder?</div><div class="qa-answer">No</div></div>
         </div>
 
-        <!-- FOUNDER VIDEO -->
         <div id="f_founder_video" class="apply-section">
           <div class="apply-section-header">Founder Video</div>
-          <div class="video-preview">
-            <video controls loop preload="metadata">
-              <source src="https://kunalshaw79.github.io/bluedot-investor-page/assets/founders-video.mp4" type="video/mp4">
-            </video>
-          </div>
+          <div class="video-preview"><video controls loop preload="metadata"><source src="https://kunalshaw79.github.io/bluedot-investor-page/assets/founders-video.mp4" type="video/mp4"></video></div>
         </div>
 
-        <!-- COMPANY -->
         <div id="f_company" class="apply-section">
           <div class="apply-section-header">Company</div>
-
-          <div class="qa-block">
-            <div class="qa-question">Company name</div>
-            <div class="qa-answer">BlueDot Labs</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">Describe what your company does in 50 characters or less.</div>
-            <div class="qa-answer">Physics simulations for energy R&amp;D, 100x faster</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">Company URL, if any</div>
-            <div class="qa-answer"><a href="https://bluedotlabs.org/" target="_blank">https://bluedotlabs.org/</a></div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">Demo Video</div>
-            <div class="video-preview">
-              <video controls loop preload="metadata">
-                <source src="https://kunalshaw79.github.io/bluedot-investor-page/assets/demo-video.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">Please provide a link to the product, if any.</div>
-            <div class="qa-answer"><a href="https://bluedotlabs.org/login" target="_blank">https://bluedotlabs.org/login</a></div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question" style="font-size:14px;color:var(--text-secondary)">If login credentials are required for the link above, enter them here.</div>
-            <div class="qa-answer">demo@bdlabs.ai / pimono@032</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">What is your company going to make? Please describe your product and what it does or will do.</div>
-            <div class="qa-answer">We've built an AI-native platform that reduces complex battery simulations from 7-8 days to under 30 minutes witnessed by e-TRNL energy, a battery company.
+          <div class="qa-block"><div class="qa-question">Company name</div><div class="qa-answer">BlueDot Labs</div></div>
+          <div class="qa-block"><div class="qa-question">Describe what your company does in 50 characters or less.</div><div class="qa-answer">Physics simulations for energy R&amp;D, 100x faster</div></div>
+          <div class="qa-block"><div class="qa-question">Company URL</div><div class="qa-answer"><a href="https://bluedotlabs.org/" target="_blank">https://bluedotlabs.org/</a></div></div>
+          <div class="qa-block"><div class="qa-question">Demo Video</div><div class="video-preview"><video controls loop preload="metadata"><source src="https://kunalshaw79.github.io/bluedot-investor-page/assets/demo-video.mp4" type="video/mp4"></video></div></div>
+          <div class="qa-block"><div class="qa-question">Product link</div><div class="qa-answer"><a href="https://bluedotlabs.org/login" target="_blank">https://bluedotlabs.org/login</a></div></div>
+          <div class="qa-block"><div class="qa-question" style="font-size:13px;color:var(--text-secondary);font-weight:400">Login credentials for the product</div><div class="qa-answer">demo@bdlabs.ai / pimono@032</div></div>
+          <div class="qa-block"><div class="qa-question">What is your company going to make?</div><div class="qa-answer">We've built an AI-native platform that reduces complex battery simulations from 7-8 days to under 30 minutes witnessed by e-TRNL energy, a battery company.
 
 The AI agent plans, builds, and runs scientific simulations from plain text. It converts a text prompt into an editable flowchart and clarifies constraints with the researcher before running the physical model on our compute.
 
-Researchers can instantly run parameter sweeps and visualize results, condensing weeks of complex scientific modeling into minutes of prompting so researchers can focus purely on the science.</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">Where do you live now, and where would the company be based?</div>
-            <div class="qa-answer">Bengaluru, India / San Francisco, USA</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">Explain your decision regarding location.</div>
-            <div class="qa-answer">SF gives our AI product direct access to the network, high-paying customers, top talent, and deep-tech investors.</div>
-          </div>
+Researchers can instantly run parameter sweeps and visualize results, condensing weeks of complex scientific modeling into minutes of prompting so researchers can focus purely on the science.</div></div>
+          <div class="qa-block"><div class="qa-question">Where do you live now, and where would the company be based?</div><div class="qa-answer">Bengaluru, India / San Francisco, USA</div></div>
+          <div class="qa-block"><div class="qa-question">Explain your decision regarding location.</div><div class="qa-answer">SF gives our AI product direct access to the network, high-paying customers, top talent, and deep-tech investors.</div></div>
         </div>
 
-        <!-- PROGRESS -->
         <div id="f_progress" class="apply-section">
           <div class="apply-section-header">Progress</div>
+          <div class="qa-block"><div class="qa-question">How far along are you?</div><div class="qa-answer">In 3 months, we shipped V0, obtained paid contracts with two B2B battery companies (e-TRNL Energy, Arkle Energy) which executes with V1 launch, and onboarded three Tier-1 institutions (Caltech, TU Munich, TU Dresden) as design partners. We're now iterating to V1 based on our customers' feedback to deliver on those contracts.</div></div>
+          <div class="qa-block"><div class="qa-question">How long have each of you been working on this?</div><div class="qa-answer">3 months. Kunal full time, Kamal joins full-time June 4th.
 
-          <div class="qa-block">
-            <div class="qa-question">How far along are you?</div>
-            <div class="qa-answer">In 3 months, we shipped V0, obtained paid contracts with two B2B battery companies (e-TRNL Energy, Arkle Energy) which executes with V1 launch, and onboarded three Tier-1 institutions (Caltech, TU Munich, TU Dresden) as design partners. We're now iterating to V1 based on our customers' feedback to deliver on those contracts.</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">How long have each of you been working on this? How much of that has been full-time? Please explain.</div>
-            <div class="qa-answer">We are building this product since 3 months. Kunal is full time and Kamal joins full-time June 4th, currently serving notice.
-
-Kunal ran ProtonCraft for 1.5 years. BlueDotLabs is the internal tool we built out of desperation. Realized every deep-tech team has the same problem.
-ProtonCraft is a local maxima. We're going for the bigger one.</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">What tech stack are you using, or planning to use, to build this product? Include AI models and AI coding tools you use.</div>
-            <div class="qa-answer">Backend: Python. Coding agent server: TypeScript (powered by PiMono — the same engine behind OpenClaw). DB: PostgreSQL. Frontend: Next.js. Flow builder: React Flow.
-We build with Claude Code as our primary coding agent, falling back to OpenCode with GLM, Obra superpowers, and Oh My OpenCode. Both are customized with Playwright skills for E2E testing and integrated DevOps workflows. UI/UX starts in Google Stitch — screens go straight to the agent as reference.</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">Optional: attach a coding agent session you're particularly proud of.</div>
-            <div class="qa-question-subtitle">Many coding agents (i.e. Claude Code, Cursor, etc) have a /export command, or otherwise include a button allowing you to export a transcript. Can be text or markdown.</div>
+Kunal ran ProtonCraft for 1.5 years. BlueDotLabs is the internal tool we built out of desperation. Realized every deep-tech team has the same problem. ProtonCraft is a local maxima. We're going for the bigger one.</div></div>
+          <div class="qa-block"><div class="qa-question">What tech stack are you using?</div><div class="qa-answer">Backend: Python. Coding agent server: TypeScript (PiMono — same engine behind OpenClaw). DB: PostgreSQL. Frontend: Next.js. Flow builder: React Flow.
+Build with Claude Code + OpenCode/GLM, customized with Playwright skills for E2E testing. UI/UX starts in Google Stitch.</div></div>
+          <div class="qa-block"><div class="qa-question">Coding agent session</div><div class="qa-question-subtitle">Attach a transcript you're proud of</div>
             <div class="coding-session-block">
               <h1>Parametric 3D web editor for e-TRNL unit cell</h1>
-              <p><strong>Session ID:</strong> ses_23690f7deffeNa0pUm1Hql7pB4<br>
-              <strong>Duration:</strong> 55.6 hours<br>
-              <strong>Messages:</strong> 951</p>
-              <hr>
-              <p>A patent-faithful 3D mesh of the <strong>e-TRNL 3DEA (Three-Dimensional Electrode Architecture)</strong> battery unit cell — a lithium-ion cell geometry where cathode material is formed into vertical cylindrical pins embedded in an anode matrix, inspired by an origami/pin-array patent.</p>
-              <p><strong>Key parameters:</strong></p>
-              <ul>
-                <li><code>hex_R = 1.95 mm</code>, <code>H = 4.0 mm</code>, <code>d_pin = 0.30 mm</code></li>
-                <li><code>t_sep = 0.025 mm</code> (Al₂O₃ ceramic), <code>t_w = 0.025 mm</code></li>
-                <li><strong>61 cathode pins</strong> in a <strong>4-ring HCP lattice</strong></li>
-              </ul>
-              <p>Built using brainstorming skill → design decisions → full Three.js implementation in a single <code>index.html</code>. Agent went from requirement clarification to shipped product in one session.</p>
-              <p><em>Full session available on request.</em></p>
+              <p><strong>Session:</strong> ses_23690f7deffeNa0pUm1Hql7pB4 | <strong>Duration:</strong> 55.6 hrs | <strong>Messages:</strong> 951</p><hr>
+              <p>Patent-faithful 3D mesh of the <strong>e-TRNL 3DEA</strong> battery unit cell — cathode pins embedded in anode matrix, inspired by origami/pin-array patent.</p>
+              <ul><li><code>hex_R=1.95mm</code>, <code>H=4.0mm</code>, <code>d_pin=0.30mm</code>, <code>t_sep=0.025mm</code></li><li><strong>61 pins</strong> in 4-ring HCP lattice</li></ul>
+              <p>Built brainstorming → design → full Three.js in single session. <em>Full transcript on request.</em></p>
             </div>
           </div>
-
-          <div class="qa-block">
-            <div class="qa-question">Are people using your product?</div>
-            <div class="qa-answer">Yes</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">How many active users or customers do you have? How many are paying? Who is paying you the most, and how much do they pay you?</div>
-            <div class="qa-answer">Paying customers: 2. e-TRNL Energy and Arkle Energy, both on $500/seat/month contracts, activating with V1 launch.
-Signed LOIs: 2 more deeptech companies - Indi Energy and Onnes Cryogenics — currently co-defining their modules with us.
+          <div class="qa-block"><div class="qa-question">Are people using your product?</div><div class="qa-answer">Yes</div></div>
+          <div class="qa-block"><div class="qa-question">How many active users or customers?</div><div class="qa-answer">Paying: 2 (e-TRNL Energy, Arkle Energy — $500/seat/month, activating with V1).
+LOIs: Indi Energy, Onnes Cryogenics.
 Design partners: 3 researchers at Tier 1 universities.
-Pipeline: BPCL (one of India's largest oil company, ~$50B revenue) joined the waitlist after a live demo. Vetri Labs has a demo scheduled for US-market entry.</div>
-          </div>
+Pipeline: BPCL (~$50B revenue) on waitlist. Vetri Labs demo scheduled.</div></div>
+          <div class="qa-block"><div class="qa-question">Revenue?</div><div class="qa-answer">No</div></div>
+          <div class="qa-block"><div class="qa-question">Why did you pivot from ProtonCraft?</div><div class="qa-answer">BlueDot Labs is the direct solution of the problem we faced daily at ProtonCraft for 1.5 years. We desperately needed AI simulation tools to pace up R&amp;D, so we started building it.
 
-          <div class="qa-block">
-            <div class="qa-question">Do you have revenue?</div>
-            <div class="qa-answer">no</div>
-          </div>
+At ProtonCraft, we built 8x better technology and reached TRL-6. But velocity was bottlenecked by slow customers (oil refineries) and heavy regulations.
 
-          <div class="qa-block">
-            <div class="qa-question">Why did you pivot from ProtonCraft?</div>
-            <div class="qa-answer">BlueDot Labs is the direct solution of the problem we faced daily at ProtonCraft for 1.5 years. We desperately needed AI simulation tools to pace up R&amp;D, so we started building it.
-
-At ProtonCraft, we built 8x better technology and reached the pre-pilot stage (TRL-6). However, our velocity was constantly bottlenecked by slow-moving customers (oil refineries) and heavy regulations.
-
-Our core learning: relying on legacy industries to validate your tech kills momentum. We pivoted to software so we can own the entire product cycle and move fast. Instead of selling to dinosaurs, we want to outpace them.</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">Have you participated in any incubator or accelerator programs?</div>
-            <div class="qa-answer">No</div>
-          </div>
+Core learning: relying on legacy industries to validate your tech kills momentum. We pivoted to software so we can own the entire product cycle and move fast.</div></div>
+          <div class="qa-block"><div class="qa-question">Any incubator/accelerator participation?</div><div class="qa-answer">No</div></div>
         </div>
 
-        <!-- IDEA -->
         <div id="f_idea" class="apply-section">
           <div class="apply-section-header">Idea</div>
+          <div class="qa-block"><div class="qa-question">Why did you pick this idea? Domain expertise?</div><div class="qa-answer">We want to build a faster research ecosystem where the focus is science, not labor. We picked this because we've lived it — watching researchers lose weeks wrestling with clunky simulation tools. With current AI models, it's possible to do now what wasn't possible even 6 months ago.
 
-          <div class="qa-block">
-            <div class="qa-question">Why did you pick this idea to work on? Do you have domain expertise in this area? How do you know people need what you're making?</div>
-            <div class="qa-answer">We want to build a faster research ecosystem where the focus is science, not labor. We picked this idea because we've lived it - watching researchers lose weeks wrestling with clunky simulation tools, writing boilerplate scripts, and stitching together workflows that should just work, and we saw this pattern repeat across labs, startups, and enterprises. And with current emerging AI models, we've observed it's possible to do now what wasn't possible even 6 months ago.
+Both have domain expertise. Kunal lived the exact problem at ProtonCraft. Kamal scaled two startups as founding AI engineer with simulation interest.
 
-Yes, we both have domain expertise in our field. I have lived the exact problem building ProtonCraft's electrocatalyst, and Kamal has scaled two startups as a founding AI engineer - he has also built simulations and has a keen interest in the space.
+Customers like e-TRNL and Indi need not just software licenses but a specialist whose only work is translating science into software GUI.</div></div>
+          <div class="qa-block"><div class="qa-question">Competitors? What do you understand that they don't?</div><div class="qa-answer">COMSOL, ASPEN, ANSYS, SimScale — black boxes with decades-long update cycles. Godela, PhysicsX — mostly mechanical engineering, not energy R&amp;D.
 
-Talking to customers like e-TRNL and Indi, we realised they not only need specific software licenses but also need a specialist whose only work is to translate science into software GUI.</div>
-          </div>
+Researchers can't see the physics, can't swap solvers, can't afford the licence. 80% of better open-source solvers sit unused because integration took weeks — until now.
 
-          <div class="qa-block">
-            <div class="qa-question">Who are your competitors? What do you understand about your business that they don't?</div>
-            <div class="qa-answer">Incumbents like COMSOL, ASPEN, ANSYS, and SimScale are clusters of physics solvers wrapped in black boxes with decades-long update cycles. New AI-native players like Godela, PhysicsX are interesting, but they operate in mostly mechanical engineering - energy R&amp;D requires domain-specific models for electrochemistry, thermal dynamics, and material science that these tools handle poorly.
+AI is finally good enough to orchestrate domain-specific simulations correctly. We're building at that inflection point — modular, transparent, pay-per-use. Starting with energy R&amp;D where wrong answers cost years.</div></div>
+          <div class="qa-block"><div class="qa-question">How do/will you make money?</div><div class="qa-answer">6 B2B customers in Bangalore spending $150K–$300K/year on licenses + simulation engineers. We replace at $20K–$25K/year, $147K ARR, 6 weeks to close post-launch.
+US launch 6 months: 2–3× deal sizes. Month 9: $647K ARR, 13 customers.
 
-Incumbents are black boxes with GUI. Researchers can't see the physics, can't swap solvers, can't afford the licence. 80% of better open-source solvers sit unused because integration took weeks - until now.
-
-AI is finally good enough to orchestrate domain-specific simulations correctly. We're building at exactly that inflection point - modular, transparent, pay-per-use. Starting with energy R&amp;D where wrong answers cost years.</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">How do or will you make money? How much could you make?</div>
-            <div class="qa-answer">6 potential B2B customers in connect at Bangalore who spends $150K–$300K/year on licenses plus simulation engineers. We replace that at $20K–$25K/year, estimated $147K ARR, 6 weeks to close post public launch.
-US launch 6 months: SF energy startups at 2–3× deal sizes, energy companies in Alabama and Texas.
-Month 9: $647K ARR, 13 customers, 3 geographies.
-
-There are 3,000 teams globally with identical budget profiles in energy R&amp;D alone that's a $927M ARR opportunity. And that's just 5% of the $20B simulation software market, growing at 10.4% annually to $36B by 2030.</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">Which category best applies to your company?</div>
-            <div class="qa-answer">B2B SaaS</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">If you had any other ideas you considered, please list them.</div>
-            <div class="qa-answer">Our core belief: scientists should only do science.
-Physical AI to automate all manual labor in wet labs - starting with electrochemistry.
-AI-powered research lab that runs autonomously and does breakthrough science - a second Bell Labs, but limitless.</div>
-          </div>
+3,000 teams globally = $927M ARR opportunity. Just 5% of $20B simulation software market, growing 10.4% annually to $36B by 2030.</div></div>
+          <div class="qa-block"><div class="qa-question">Category?</div><div class="qa-answer">B2B SaaS</div></div>
+          <div class="qa-block"><div class="qa-question">Other ideas you considered?</div><div class="qa-answer">Scientists should only do science.
+Physical AI to automate all manual labor in wet labs — starting with electrochemistry.
+AI-powered research lab that runs autonomously — a second Bell Labs, but limitless.</div></div>
         </div>
 
-        <!-- EQUITY -->
         <div id="f_equity" class="apply-section">
           <div class="apply-section-header">Equity</div>
-
-          <div class="qa-block">
-            <div class="qa-question">Have you formed ANY legal entity yet?</div>
-            <div class="qa-answer">no</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">Planned equity ownership breakdown</div>
-            <div class="qa-answer">We've planned equal split as we both have complimentary roles crucial for company growth.
-Kunal - CEO, 50%
-Kamal - CTO, 50%</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">Have you taken any investment yet?</div>
-            <div class="qa-answer">no</div>
-          </div>
-
-          <div class="qa-block">
-            <div class="qa-question">Are you currently fundraising?</div>
-            <div class="qa-answer">no</div>
-          </div>
+          <div class="qa-block"><div class="qa-question">Have you formed any legal entity?</div><div class="qa-answer">No</div></div>
+          <div class="qa-block"><div class="qa-question">Planned equity breakdown</div><div class="qa-answer">Equal split.
+Kunal — CEO, 50%
+Kamal — CTO, 50%</div></div>
+          <div class="qa-block"><div class="qa-question">Taken any investment?</div><div class="qa-answer">No</div></div>
+          <div class="qa-block"><div class="qa-question">Currently fundraising?</div><div class="qa-answer">No</div></div>
         </div>
 
       </div>
-
     </div>
   </div>
 
-  <!-- FOOTER -->
   <div class="app-footer">
     <div class="app-footer-inner">
       <a href="https://bluedotlabs.org/" target="_blank">Website</a>
@@ -880,24 +611,15 @@ Kamal - CTO, 50%</div>
 
   <script>
     function toggleFounder(topEl) {
-      const card = topEl.closest('.founder-card');
-      card.classList.toggle('open');
+      topEl.closest('.founder-card').classList.toggle('open');
     }
-
     const sections = document.querySelectorAll('.apply-section');
     const navLinks = document.querySelectorAll('.sidebar-nav a');
-
     function updateNav() {
       let current = '';
-      sections.forEach(s => {
-        const top = s.offsetTop - 100;
-        if (window.scrollY >= top) current = s.id;
-      });
-      navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-      });
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
     }
-
     window.addEventListener('scroll', updateNav);
     updateNav();
   </script>
